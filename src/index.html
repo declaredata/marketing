@@ -3,89 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeclareData Landing Page</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>DeclareData</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .animate-logo path:nth-child(1) {
+            animation: bounce1 2s infinite;
+        }
+        .animate-logo path:nth-child(2) {
+            animation: bounce2 2s infinite;
+        }
+        .animate-logo path:nth-child(3) {
+            animation: bounce3 2s infinite;
+        }
+        .animate-logo path:nth-child(4) {
+            animation: bounce4 2s infinite;
+        }
+
+        @keyframes bounce1 {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-5px);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes bounce2 {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-7px);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes bounce3 {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-10px);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes bounce4 {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-12px);
+                opacity: 0.7;
+            }
+        }
+    </style>
 </head>
 
-<body class="flex min-h-full w-full flex-col items-center overflow-x-hidden bg-gray-50 text-gray-950">
+<body class="flex items-center justify-center min-h-screen w-full bg-gray-50 text-gray-950">
+
     <!-- Header -->
-    <header class="absolute left-0 top-0 flex h-20 w-full items-center justify-between px-5">
-        <div class="text-2xl font-normal">DeclareData</div>
+    <header class="absolute top-0 left-0 flex h-20 w-full items-center justify-center px-5">
+        <div class="flex items-center">
+            <div class="text-xl font-normal p-4">Declare</div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="animate-logo">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v18M15 9v12M21 3v18" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 3v18" />
+            </svg>
+            <div class="text-xl font-normal p-4">Data</div>
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main class="relative mb-32 h-screen w-screen">
-        <div class="absolute left-0 top-[100vh] h-32 w-full bg-gradient-to-t from-gray-50 to-transparent"></div>
-        <div class="absolute inset-0 flex h-full w-full flex-col items-center justify-center">
-            <h3 class="mb-3 rounded-full bg-purple-200/20 px-5 py-1 text-sm font-semibold text-purple-600 transition-opacity duration-700">Beta</h3>
-            <h1 class="mb-5 text-center text-5xl font-normal sm:text-6xl md:text-7xl transition-opacity duration-700">Unlock New Revenue++</h1>
-            <h2 class="mb-9 max-w-lg text-center text-lg font-normal delay-300 duration-700 transition-[opacity,filter]">
-              Securely monetize your company's data and grow revenue without compromising compliance or control.
-            </h2>
-            <div class="flex min-h-10 w-full max-w-md flex-wrap items-center justify-center gap-6 text-sm transition-opacity duration-700">
-                <a class="inline-block flex items-center min-h-10 rounded-md px-6 leading-none bg-gray-800 text-white hover:bg-black/75" href="#"><span class="relative">Book a Demo</span></a>
-            </div>
-            <!--
-     <div class="p-8 hover:cursor-pointer hover:opacity-80">
-       <svg xmlns="http://www.w3.org/2000/svg" height="8" fill="none" viewBox="0 0 26 8" class="animate-bounce stroke-2"><path stroke="currentColor" stroke-linecap="round" d="m1 1 11.553 5.776a1 1 0 0 0 .894 0L25 1"></path></svg>
-     </div>
-            -->
+    <main class="flex flex-col items-center justify-center min-h-screen w-full p-2 md:p-10 lg:p-20">
+        <h3 class="mb-3 rounded-full bg-purple-200/20 px-5 py-1 text-sm font-semibold text-purple-600 transition-opacity duration-700">Beta</h3>
+        <h1 class="mb-5 text-center text-5xl md:text-2xl transition-opacity duration-700">Unlock New Revenue++</h1>
+        <h2 class="mb-9 max-w-lg text-center text-lg sm:text-lg md:text-xl font-normal transition-opacity duration-700">
+            Securely monetize your company's data and grow revenue without compromising compliance or control.
+        </h2>
+        <div class="flex min-h-10 w-full max-w-md flex-wrap items-center justify-center gap-6 text-sm transition-opacity duration-700">
+            <a class="inline-block flex items-center min-h-10 rounded-md px-6 leading-none bg-gray-800 text-white hover:bg-black/75" href="#"><span class="relative">Book a Demo</span></a>
+        </div>
     </main>
-
-<!--
-    <section class="flex max-w-5xl flex-col items-center justify-center gap-32 px-6 py-32">
-        <h4 class="max-w-lg text-center text-4xl">DeclareData is a faster, easier way to manage your data declarations</h4>
-
-        <div class="md:grid flex flex-col md:grid-cols-2 items-center justify-center bg-white rounded-md overflow-hidden w-full md:aspect-[140/67]">
-            <div class="flex flex-col items-center justify-center gap-4 p-8 text-center md:items-start md:p-20 md:text-left">
-                <h3 class="w-full pr-4 text-2xl font-normal">Designed for Accuracy</h3>
-                <p class="text-base font-normal text-gray-600">Get quick and accurate declarations for your data.</p>
-            </div>
-            <video src="https://persistent.oaistatic.com/sonic/landing/fastanswers_v3.mp4" autoplay loop muted class="h-full w-full object-cover"></video>
-        </div>
-
-        <div class="md:grid flex flex-col md:grid-cols-2 items-center justify-center bg-white rounded-md overflow-hidden w-full md:aspect-[140/67]">
-            <video src="https://persistent.oaistatic.com/sonic/landing/realtimeinfo_v2.mp4" autoplay loop muted class="aspect-square h-full w-full object-cover"></video>
-            <div class="flex flex-col items-center justify-center gap-4 p-8 text-center md:items-start md:p-20 md:text-left">
-                <h3 class="w-full pr-4 text-2xl font-normal">Real-time Information</h3>
-                <p class="text-base font-normal text-gray-600">Find up-to-date information with clear links to relevant sources.</p>
-            </div>
-        </div>
-
-        <div class="md:grid flex flex-col md:grid-cols-2 items-center justify-center bg-white rounded-md overflow-hidden w-full md:aspect-[140/67]">
-            <div class="flex flex-col items-center justify-center gap-4 p-8 text-center md:items-start md:p-20 md:text-left">
-                <h3 class="w-full pr-4 text-2xl font-normal">Intuitive Interaction</h3>
-                <p class="text-base font-normal text-gray-600">Engage with your data in a natural, conversational way.</p>
-            </div>
-            <video src="https://persistent.oaistatic.com/sonic/landing/followups_v3.mp4" autoplay loop muted class="h-full w-full object-cover"></video>
-        </div>
-
-        <div class="md:grid flex flex-col md:grid-cols-2 items-center justify-center bg-white rounded-md overflow-hidden w-full md:aspect-[140/67]">
-            <video src="https://persistent.oaistatic.com/sonic/landing/visualanswers_v3.mp4" autoplay loop muted class="h-full w-full object-cover"></video>
-            <div class="flex flex-col items-center justify-center gap-4 p-8 text-center md:items-start md:p-20 md:text-left">
-                <h3 class="w-full pr-4 text-2xl font-normal">Visual Insights</h3>
-                <p class="text-base font-normal text-gray-600">Get visual representations of your data for better understanding.</p>
-            </div>
-        </div>
-
-<section>
-        <div class="flex items-center justify-center bg-white rounded-xl overflow-hidden w-full md:h-96">
-            <div class="flex flex-col items-center justify-center gap-4 p-8 text-center md:px-20 md:py-16">
-              <h3 class="pr-4 text-3xl font-normal">How DeclareData Works</h3>
-                <div>
-                  <p class="mt-2">Securely connect your data sources.</p>
-                  <p class="mt-2">Set your data preferences and pricing.</p>
-                  <p class="mt-2">We handle the rest, from data processing to payment collection.</p>
-                </div>
-
-                <div class="mt-4 flex min-h-10 w-full max-w-md flex-wrap items-center justify-center gap-6 text-sm">
-                    <a class="inline-block flex items-center min-h-10 rounded-full px-6 leading-none bg-gray-800 text-white hover:bg-black/75" href="/auth/login?next=%2Fdeclaredata"><span class="relative">Sign in to join waitlist</span></a>
-                    <a class="hover:opacity-80" href="/auth/login?next=%2Fdeclaredata">Have access? Log in here.</a>
-                </div>
-            </div>
-        </div>
-    </section>
--->
 
 </body>
 </html>
