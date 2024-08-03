@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeclareData Landing Page</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="flex min-h-full w-full flex-col items-center overflow-x-hidden bg-gray-50 text-gray-950">
+    <!-- Header -->
+    <header class="absolute left-0 top-0 flex h-20 w-full items-center justify-between px-5">
+        <div class="text-2xl font-normal">DeclareData</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative mb-32 h-screen w-screen">
+        <div class="absolute left-0 top-[100vh] h-32 w-full bg-gradient-to-t from-gray-50 to-transparent"></div>
+        <div class="absolute inset-0 flex h-full w-full flex-col items-center justify-center">
+            <h3 class="mb-3 rounded-full bg-purple-200/20 px-5 py-1 text-sm font-semibold text-purple-600 transition-opacity duration-700">Beta</h3>
+            <h1 class="mb-5 text-center text-5xl font-normal sm:text-6xl md:text-7xl transition-opacity duration-700">Unlock New Revenue++</h1>
+            <h2 class="mb-9 max-w-lg text-center text-lg font-normal delay-300 duration-700 transition-[opacity,filter]">
+              Securely monetize your company's data to grow revenue without compromising compliance or control.
+            </h2>
+            <div class="flex min-h-10 w-full max-w-md flex-wrap items-center justify-center gap-6 text-sm transition-opacity duration-700">
+                <a class="inline-block flex items-center min-h-10 rounded-md px-6 leading-none bg-gray-800 text-white hover:bg-black/75" href="/auth/login?next=%2Fdeclaredata"><span class="relative">Book a demo</span></a>
+            </div>
+            <!--
+     <div class="p-8 hover:cursor-pointer hover:opacity-80">
+       <svg xmlns="http://www.w3.org/2000/svg" height="8" fill="none" viewBox="0 0 26 8" class="animate-bounce stroke-2"><path stroke="currentColor" stroke-linecap="round" d="m1 1 11.553 5.776a1 1 0 0 0 .894 0L25 1"></path></svg>
+     </div>
+            -->
+    </main>
+
+<!--
+    <section class="flex max-w-5xl flex-col items-center justify-center gap-32 px-6 py-32">
+        <h4 class="max-w-lg text-center text-4xl">DeclareData is a faster, easier way to manage your data declarations</h4>
+
+        <div class="md:grid flex flex-col md:grid-cols-2 items-center justify-center bg-white rounded-md overflow-hidden w-full md:aspect-[140/67]">
+            <div class="flex flex-col items-center justify-center gap-4 p-8 text-center md:items-start md:p-20 md:text-left">
+                <h3 class="w-full pr-4 text-2xl font-normal">Designed for Accuracy</h3>
+                <p class="text-base font-normal text-gray-600">Get quick and accurate declarations for your data.</p>
+            </div>
+            <video src="https://persistent.oaistatic.com/sonic/landing/fastanswers_v3.mp4" autoplay loop muted class="h-full w-full object-cover"></video>
+        </div>
+
+        <div class="md:grid flex flex-col md:grid-cols-2 items-center justify-center bg-white rounded-md overflow-hidden w-full md:aspect-[140/67]">
+            <video src="https://persistent.oaistatic.com/sonic/landing/realtimeinfo_v2.mp4" autoplay loop muted class="aspect-square h-full w-full object-cover"></video>
+            <div class="flex flex-col items-center justify-center gap-4 p-8 text-center md:items-start md:p-20 md:text-left">
+                <h3 class="w-full pr-4 text-2xl font-normal">Real-time Information</h3>
+                <p class="text-base font-normal text-gray-600">Find up-to-date information with clear links to relevant sources.</p>
+            </div>
+        </div>
+
+        <div class="md:grid flex flex-col md:grid-cols-2 items-center justify-center bg-white rounded-md overflow-hidden w-full md:aspect-[140/67]">
+            <div class="flex flex-col items-center justify-center gap-4 p-8 text-center md:items-start md:p-20 md:text-left">
+                <h3 class="w-full pr-4 text-2xl font-normal">Intuitive Interaction</h3>
+                <p class="text-base font-normal text-gray-600">Engage with your data in a natural, conversational way.</p>
+            </div>
+            <video src="https://persistent.oaistatic.com/sonic/landing/followups_v3.mp4" autoplay loop muted class="h-full w-full object-cover"></video>
+        </div>
+
+        <div class="md:grid flex flex-col md:grid-cols-2 items-center justify-center bg-white rounded-md overflow-hidden w-full md:aspect-[140/67]">
+            <video src="https://persistent.oaistatic.com/sonic/landing/visualanswers_v3.mp4" autoplay loop muted class="h-full w-full object-cover"></video>
+            <div class="flex flex-col items-center justify-center gap-4 p-8 text-center md:items-start md:p-20 md:text-left">
+                <h3 class="w-full pr-4 text-2xl font-normal">Visual Insights</h3>
+                <p class="text-base font-normal text-gray-600">Get visual representations of your data for better understanding.</p>
+            </div>
+        </div>
+
+<section>
+        <div class="flex items-center justify-center bg-white rounded-xl overflow-hidden w-full md:h-96">
+            <div class="flex flex-col items-center justify-center gap-4 p-8 text-center md:px-20 md:py-16">
+              <h3 class="pr-4 text-3xl font-normal">How DeclareData Works</h3>
+                <div>
+                  <p class="mt-2">Securely connect your data sources.</p>
+                  <p class="mt-2">Set your data preferences and pricing.</p>
+                  <p class="mt-2">We handle the rest, from data processing to payment collection.</p>
+                </div>
+
+                <div class="mt-4 flex min-h-10 w-full max-w-md flex-wrap items-center justify-center gap-6 text-sm">
+                    <a class="inline-block flex items-center min-h-10 rounded-full px-6 leading-none bg-gray-800 text-white hover:bg-black/75" href="/auth/login?next=%2Fdeclaredata"><span class="relative">Sign in to join waitlist</span></a>
+                    <a class="hover:opacity-80" href="/auth/login?next=%2Fdeclaredata">Have access? Log in here.</a>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+
+</body>
+</html>
