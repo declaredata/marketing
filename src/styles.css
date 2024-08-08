@@ -1520,6 +1520,10 @@ select {
   max-width: 24rem;
 }
 
+.max-w-xs {
+  max-width: 20rem;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -1720,6 +1724,10 @@ select {
 
 .p-10 {
   padding: 2.5rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-5 {
