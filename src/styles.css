@@ -1354,6 +1354,10 @@ select {
   max-width: 20rem;
 }
 
+.max-w-2xl {
+  max-width: 42rem;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -1606,6 +1610,10 @@ select {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-thin {
+  font-weight: 100;
 }
 
 .leading-none {
