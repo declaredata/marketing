@@ -1659,6 +1659,10 @@ select {
   transition-duration: 700ms;
 }
 
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
 .hover\:bg-black\/75:hover {
   background-color: rgb(0 0 0 / 0.75);
 }
