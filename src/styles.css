@@ -1004,6 +1004,14 @@ html {
   max-width: 37rem;
 }
 
+.max-w-lg {
+  max-width: 32rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
 .shrink-0 {
   flex-shrink: 0;
 }
@@ -1164,6 +1172,10 @@ html {
 .bg-clip-text {
   -webkit-background-clip: text;
           background-clip: text;
+}
+
+.stroke-purple-600 {
+  stroke: #9333ea;
 }
 
 .object-cover {
