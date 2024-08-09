@@ -4,14 +4,11 @@
       <!-- Inner circle outline -->
       <circle cx="1270" cy="920" r="34" fill="none" stroke="#141414" stroke-width="1"/>
 
-      <!-- Outer circle outline with dashed stroke -->
-      <circle cx="1270" cy="920" r="44" fill="none" stroke="#141414" stroke-width="0.5" stroke-dasharray="4 2"/>
-
       <!-- Animated inner purple circle -->
-      <circle id="Oval Copy" cx="1270" cy="920" r="20" fill="#D3B4FC">
+      <circle id="Oval Copy" cx="1270" cy="920" r="10" fill="#D3B4FC">
         <animate
           attributeName="r"
-          values="26;32;26"
+          values="20;28;20"
           dur="4s"
           repeatCount="indefinite"
           calcMode="ease-in-out"
