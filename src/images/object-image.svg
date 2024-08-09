@@ -1,9 +1,36 @@
-<svg viewBox="930 633.7932330827066 540.0000000000005 330.41353383458625" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="visible" width="540.0000000000005px" height="330.41353383458625px">
-  <g id="Master/Stickers/Object 1">
-    <g id="Cloud 2">
-      <path id="Fill 1" fill-rule="evenodd" clip-rule="evenodd" d="M1456.89 742.142C1456.89 794.688 1414.3 837.284 1361.75 837.284C1309.21 837.284 1266.61 794.688 1266.61 742.142C1266.61 689.597 1309.21 647 1361.75 647C1414.3 647 1456.89 689.597 1456.89 742.142" fill="#141414"/>
-      <path id="Fill 4" fill-rule="evenodd" clip-rule="evenodd" d="M948 859.398H1231.87V674.89H948V859.398ZM1233.87 863.398H946C944.896 863.398 944 862.503 944 861.398V672.891C944 671.786 944.896 670.891 946 670.891H1233.87C1234.97 670.891 1235.87 671.786 1235.87 672.891V861.398C1235.87 862.503 1234.97 863.398 1233.87 863.398V863.398Z" fill="#141414"/>
-      <path id="Fill 6" fill-rule="evenodd" clip-rule="evenodd" d="M1308.4 961.387L1022.32 929.291L1043.34 741.959L1329.42 774.055L1308.4 961.387Z" fill="#D3B4FC"/>
-    </g>
-  </g>
+<svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" width="100%" preserveAspectRatio="xMidYMid meet">
+  <!-- Outlined square centered in the viewBox -->
+  <rect x="50" y="50" width="50" height="50" fill="none" stroke="#141414" stroke-width="1"/>
+
+  <!-- Purple filled square with dashed outline and easing animation -->
+  <rect x="55" y="55" width="40" height="40" fill="#D3B4FC" stroke="#141414" stroke-width="0.5" stroke-dasharray="4 2">
+    <animate
+      attributeName="x"
+      values="55; 42.5; 55"
+      dur="4s"
+      repeatCount="indefinite"
+      calcMode="ease-in-out"
+    />
+    <animate
+      attributeName="y"
+      values="55; 42.5; 55"
+      dur="4s"
+      repeatCount="indefinite"
+      calcMode="ease-in-out"
+    />
+    <animate
+      attributeName="width"
+      values="40; 65; 40"
+      dur="4s"
+      repeatCount="indefinite"
+      calcMode="ease-in-out"
+    />
+    <animate
+      attributeName="height"
+      values="40; 65; 40"
+      dur="4s"
+      repeatCount="indefinite"
+      calcMode="ease-in-out"
+    />
+  </rect>
 </svg>

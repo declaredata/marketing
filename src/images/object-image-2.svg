@@ -1,18 +1,22 @@
-<svg viewBox="990 543.6804511278194 420.0000000000004 510.6390977443611" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="visible" width="420.0000000000004px" height="510.6390977443611px">
-  <g id="Master/Stickers/Object 2">
-    <g id="Cloud 2">
-      <g id="Frames">
-        <g id="frame">
-          <path id="Fill 36" fill-rule="evenodd" clip-rule="evenodd" d="M1149.39 1043.26H1410.27V796.264H1149.39V1043.26Z" fill="white"/>
-          <path id="Oval" fill-rule="evenodd" clip-rule="evenodd" d="M1313.8 920.067C1313.8 893.546 1292.3 872.047 1265.78 872.047C1239.26 872.047 1217.76 893.546 1217.76 920.067C1217.76 946.588 1239.26 968.087 1265.78 968.087C1292.3 968.087 1313.8 946.588 1313.8 920.067ZM1221.76 920.067C1221.76 895.755 1241.46 876.047 1265.78 876.047C1290.09 876.047 1309.8 895.755 1309.8 920.067C1309.8 944.378 1290.09 964.087 1265.78 964.087C1241.46 964.087 1221.76 944.378 1221.76 920.067Z" fill="#141414"/>
-          <circle id="Oval Copy" cx="1307.78" cy="956.088" r="36" fill="#D3B4FC"/>
-        </g>
-        <path id="frame 2" fill-rule="evenodd" clip-rule="evenodd" d="M990 910.444H1089.74V798.492H990V910.444Z" fill="white"/>
-        <g id="frame 1">
-          <path id="Assets 84" fill-rule="evenodd" clip-rule="evenodd" d="M1149.39 752H1325.79V554H1149.39V752Z" fill="white"/>
-          <path id="Triangle Copy" fill-rule="evenodd" clip-rule="evenodd" d="M1279.74 695.049L1238.77 623.049L1197.79 695.049H1279.74ZM1204.67 691.049L1238.77 631.135L1272.86 691.049H1204.67Z" fill="#141414"/>
-        </g>
-      </g>
+<svg viewBox="1200 850 150 150" xmlns="http://www.w3.org/2000/svg" width="100%" preserveAspectRatio="xMidYMid meet">
+  <g id="Cloud 2">
+    <g id="frame">
+      <!-- Inner circle outline -->
+      <circle cx="1270" cy="920" r="34" fill="none" stroke="#141414" stroke-width="1"/>
+
+      <!-- Outer circle outline with dashed stroke -->
+      <circle cx="1270" cy="920" r="44" fill="none" stroke="#141414" stroke-width="0.5" stroke-dasharray="4 2"/>
+
+      <!-- Animated inner purple circle -->
+      <circle id="Oval Copy" cx="1270" cy="920" r="20" fill="#D3B4FC">
+        <animate
+          attributeName="r"
+          values="26;32;26"
+          dur="4s"
+          repeatCount="indefinite"
+          calcMode="ease-in-out"
+        />
+      </circle>
     </g>
   </g>
 </svg>
