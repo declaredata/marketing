@@ -1508,9 +1508,22 @@ select {
   border-width: 1px;
 }
 
+.border-0 {
+  border-width: 0px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+.border-purple-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(216 180 254 / var(--tw-border-opacity));
 }
 
 .bg-blue-500 {
@@ -1636,6 +1649,11 @@ select {
   padding-bottom: 0.75rem;
 }
 
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .pr-4 {
   padding-right: 1rem;
 }
@@ -1754,6 +1772,41 @@ select {
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.text-purple-500 {
+  --tw-text-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-text-opacity));
+}
+
+.placeholder-purple-500::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-placeholder-opacity));
+}
+
+.placeholder-purple-500::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-placeholder-opacity));
+}
+
+.placeholder-purple-300::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(216 180 254 / var(--tw-placeholder-opacity));
+}
+
+.placeholder-purple-300::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(216 180 254 / var(--tw-placeholder-opacity));
+}
+
+.placeholder-purple-400::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(192 132 252 / var(--tw-placeholder-opacity));
+}
+
+.placeholder-purple-400::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(192 132 252 / var(--tw-placeholder-opacity));
 }
 
 .transition-opacity {
