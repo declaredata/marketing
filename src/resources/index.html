@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeclareData - Guides</title>
     <link rel="stylesheet" href="/styles.css">
-
- <style>
+    <style>
         @keyframes logo-animation {
             0% { stroke-dashoffset: 0; }
             100% { stroke-dashoffset: 18; }
@@ -14,21 +13,6 @@
 
         .animate-logo {
             animation: logo-animation 2s linear infinite;
-        }
-
-        body.menu-open {
-            overflow: hidden;
-        }
-
-        #mobile-menu {
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        #mobile-menu.active {
-            opacity: 1;
-            visibility: visible;
         }
 
         @media (max-width: 767px) {
@@ -75,10 +59,10 @@
 
 <body class="flex flex-col min-h-screen bg-gray-50 text-gray-950">
     <!-- Header -->
-    <header class="fixed top-0 left-0 flex h-20 w-full px-10">
+    <header id="main-header" class="fixed top-0 left-0 flex h-20 w-full px-10 transition-all duration-300 ease-in-out backdrop-blur-sm">
         <div class="flex w-full items-center justify-between">
+              <a href="/" class="flex-inline">
             <div class="flex items-center">
-              <a href="/" class="inline-flex">
                 <div class="logo-text text-2xl font-light p-1">Declare</div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="animate-logo logo-svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0.5,4" d="M9 3v18"/>
@@ -87,8 +71,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0.5,4" d="M3 3v18" class="stroke-purple-600 from-purple-600 via-purple-700"/>
                 </svg>
                 <div class="logo-text text-2xl font-light p-1">Data</div>
-              </a>
             </div>
+              </a>
 
             <!-- Desktop Menu -->
             <nav class="hidden md:flex items-center gap-6">
@@ -98,30 +82,30 @@
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none" aria-label="Toggle menu">
                 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
     </header>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 flex flex-col justify-center items-center">
-        <button id="close-menu-button" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none" aria-label="Close menu">
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden">
+        <button id="close-menu-button" class="absolute right-6 top-20 text-gray-500 hover:text-gray-700 focus:outline-none p-2" aria-label="Close menu">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
-        <nav class="flex flex-col items-center gap-6">
+        <nav class="flex flex-col items-center justify-center h-full gap-6">
             <a href="/resources" class="text-xl font-normal hover:text-purple-600 transition-colors">Expert Guides</a>
         </nav>
     </div>
 
-<section class="flex flex-col items-center justify-center gap-4 py-20">
+<main class="flex flex-col items-center justify-center gap-2 py-20">
     <p class="text-xl p-4 md:text-2xl font-normal">Expert Guides</p>
-    <div class="flex flex-col items-center gap-4">
-      <a href="#" class="text-lg font-normal text-gray-800 hover:text-purple-600 transition-colors">Data Monetization Guide: Balancing Ethics and Profit</a>
+    <div class="flex flex-col items-center justify-center p-10">
+      <a href="#" class="text-md md:text-lg font-normal text-gray-800 hover:text-purple-600 transition-colors">Data Monetization Guide: Balancing Ethics and Profit</a>
     </div>
-</section>
+</main>
 
 <script src="/dd.js"></script>
 </body>

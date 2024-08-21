@@ -15,21 +15,6 @@
             animation: logo-animation 2s linear infinite;
         }
 
-        body.menu-open {
-            overflow: hidden;
-        }
-
-        #mobile-menu {
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        #mobile-menu.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
         @media (max-width: 767px) {
             .logo-text {
                 display: none;
@@ -74,7 +59,7 @@
 
 <body class="flex flex-col min-h-screen bg-gray-50 text-gray-950">
     <!-- Header -->
-    <header class="fixed top-0 left-0 flex h-20 w-full px-10">
+    <header id="main-header" class="fixed top-0 left-0 flex h-20 w-full px-10 transition-all duration-300 ease-in-out backdrop-blur-sm">
         <div class="flex w-full items-center justify-between">
               <a href="/" class="flex-inline">
             <div class="flex items-center">
@@ -97,20 +82,20 @@
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none" aria-label="Toggle menu">
                 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
     </header>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 flex flex-col justify-center items-center">
-        <button id="close-menu-button" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none" aria-label="Close menu">
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden">
+        <button id="close-menu-button" class="absolute right-6 top-20 text-gray-500 hover:text-gray-700 focus:outline-none p-2" aria-label="Close menu">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
-        <nav class="flex flex-col items-center gap-6">
+        <nav class="flex flex-col items-center justify-center h-full gap-6">
             <a href="/resources" class="text-xl font-normal hover:text-purple-600 transition-colors">Expert Guides</a>
         </nav>
     </div>
@@ -170,7 +155,7 @@
         </div>
 
         <div class="flex items-center justify-center rounded-xl overflow-hidden w-full md:h-[30rem]">
-          <div class="flex flex-col items-center justify-center gap-4 p-4 text-center md:px-16 md:py-10">
+          <div class="flex flex-col items-center justify-center gap-4 p-4 text-center py-24 sm:px-16 sm:py-10">
             <h3 class="pr-4 text-2xl font-normal">Qualify for our beta</h3>
             <p class="text-base font-normal text-gray-600">If your company qualifies, we will provide you with a free, no-obligation valuation of your data assets.</p>
             <div class="mt-4 flex min-h-10 w-full max-w-[30rem] flex-wrap items-center justify-center gap-6 text-[0.95rem]">
