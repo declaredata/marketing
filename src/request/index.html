@@ -128,61 +128,62 @@
 
 <section class="flex flex-col items-center justify-center gap-4 py-20 bg-white">
   <p class="text-xl p-4 md:text-2xl font-light text-purple-600">Unlock the value of your data.</p>
-  <form id="fs-frm" name="data-review-form" accept-charset="utf-8" action="https://formspree.io/f/xblryorr" method="post" class="w-full max-w-xs p-8 md:p-0 md:max-w-md">
+  <form id="fs-frm" name="data-review-form" accept-charset="utf-8" action="https://formspree.io/f/xblryorr" method="post" class="w-full max-w-md p-8 space-y-4">
     <fieldset id="fs-frm-inputs" class="flex flex-col gap-4">
-      <div>
-        <label for="full-name" class="text-md md:text-lg text-gray-700">Full Name</label>
-        <input type="text" name="name" id="full-name" placeholder="First and Last" class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300" required>
-      </div>
-      <div>
-        <label for="company-name" class="text-md md:text-lg text-gray-700">Company Name</label>
-        <input type="text" name="company" id="company-name" placeholder="Company" class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300" required>
-      </div>
-      <div>
-        <label for="email-address" class="text-md md:text-lg text-gray-700">Email Address</label>
-        <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300" required>
-      </div>
-      <div>
-        <label for="industry" class="text-md md:text-lg text-gray-700">Industry</label>
-        <input type="text" name="industry" id="industry" placeholder="e.g., Healthcare, Finance, Retail" class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300" required>
-      </div>
-      <div>
-        <label for="data-assets" class="text-md md:text-lg text-gray-700">Types of Data Assets</label>
-        <input type="text" name="data_assets" id="data-assets" placeholder="e.g., customer data, operational data, IoT data" class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300" required>
-      </div>
-      <div>
-        <label for="data-volume" class="text-md md:text-lg text-gray-700">Approximate Data Volume</label>
-        <input type="text" name="data_volume" id="data-volume" placeholder="e.g., 1TB, 100GB per day" class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300" required>
-      </div>
-      <div>
-        <label for="current-use" class="text-md md:text-lg text-gray-700">Current Use of Data</label>
-        <textarea rows="3" name="current_use" id="current-use" placeholder="How do you currently use your data assets?" class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300" required></textarea>
-      </div>
-      <div>
-        <label for="monetization-goals" class="text-md md:text-lg text-gray-700">Monetization Goals (optional)</label>
-        <textarea rows="3" name="monetization_goals" id="monetization-goals" placeholder="What are your primary objectives for data monetization?" class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300"></textarea>
-      </div>
-      <div>
-        <label for="target-audience" class="text-md md:text-lg text-gray-700">Target Audience (optional)</label>
-        <input type="text" name="target_audience" id="target-audience" placeholder="Who might be interested in your data?" class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300">
-      </div>
-      <div>
-        <label for="challenges" class="text-md md:text-lg text-gray-700">Key Challenges (optional)</label>
-        <textarea rows="3" name="challenges" id="challenges" placeholder="What obstacles do you face in monetizing your data?" class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300"></textarea>
-      </div>
-      <div>
-        <label for="data-quality" class="text-md md:text-lg text-gray-700">Data Quality and Governance</label>
-        <textarea rows="3" name="data_quality" id="data-quality" placeholder="Describe any current data quality and governance needs." class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300" required></textarea>
-      </div>
-      <div>
-        <label for="timeline" class="text-md md:text-lg text-gray-700">Desired Timeline</label>
-        <input type="text" name="timeline" id="timeline" placeholder="e.g., 3 months, 6 months, 1 year" class="w-full border border-gray-300 rounded-md p-2 placeholder-gray-300" required>
-      </div>
-      <input type="hidden" name="_subject" id="email-subject" value="Data Monetization Consultation Request">
+        <div>
+            <label for="full-name" class="block text-md md:text-lg font-normal text-gray-700">Full Name</label>
+            <input type="text" name="name" id="full-name" placeholder="First and Last" class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none" required>
+        </div>
+        <div>
+            <label for="company-name" class="block text-md md:text-lg font-normal text-gray-700">Company Name</label>
+            <input type="text" name="company" id="company-name" placeholder="Company" class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none" required>
+        </div>
+        <div>
+            <label for="email-address" class="block text-md md:text-lg font-normal text-gray-700">Email Address</label>
+            <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none" required>
+        </div>
+        <div>
+            <label for="industry" class="block text-md md:text-lg font-normal text-gray-700">Industry</label>
+            <input type="text" name="industry" id="industry" placeholder="e.g., Healthcare, Finance, Retail" class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none" required>
+        </div>
+        <div>
+            <label for="data-assets" class="block text-md md:text-lg font-normal text-gray-700">Types of Data Assets</label>
+            <input type="text" name="data_assets" id="data-assets" placeholder="e.g., customer data, operational data, IoT data" class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none" required>
+        </div>
+        <div>
+            <label for="data-volume" class="block text-md md:text-lg font-normal text-gray-700">Approximate Data Volume</label>
+            <input type="text" name="data_volume" id="data-volume" placeholder="e.g., 1TB, 100GB per day" class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none" required>
+        </div>
+        <div>
+            <label for="current-use" class="block text-md md:text-lg font-normal text-gray-700">Current Use of Data</label>
+            <textarea rows="3" name="current_use" id="current-use" placeholder="How do you currently use your data assets?" class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none" required></textarea>
+        </div>
+        <div>
+            <label for="monetization-goals" class="block text-md md:text-lg font-normal text-gray-700">Monetization Goals (optional)</label>
+            <textarea rows="3" name="monetization_goals" id="monetization-goals" placeholder="What are your primary objectives for data monetization?" class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
+        </div>
+        <div>
+            <label for="target-audience" class="block text-md md:text-lg font-normal text-gray-700">Target Audience (optional)</label>
+            <input type="text" name="target_audience" id="target-audience" placeholder="Who might be interested in your data?" class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none">
+        </div>
+        <div>
+            <label for="challenges" class="block text-md md:text-lg font-normal text-gray-700">Key Challenges (optional)</label>
+            <textarea rows="3" name="challenges" id="challenges" placeholder="What obstacles do you face in monetizing your data?" class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
+        </div>
+        <div>
+            <label for="data-quality" class="block text-md md:text-lg font-normal text-gray-700">Data Quality and Governance</label>
+            <textarea rows="3" name="data_quality" id="data-quality" placeholder="Describe any current data quality and governance needs." class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none" required></textarea>
+        </div>
+        <div>
+            <label for="timeline" class="block text-md md:text-lg font-normal text-gray-700">Desired Timeline</label>
+            <input type="text" name="timeline" id="timeline" placeholder="e.g., 3 months, 6 months, 1 year" class="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none" required>
+        </div>
+        <input type="hidden" name="_subject" id="email-subject" value="Data Monetization Consultation Request">
     </fieldset>
-    <button type="submit" class="mt-6 px-6 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-600 transition duration-300 text-sm">Submit Request</button>
-
-  </form>
+    <button type="submit" class="w-full px-4 py-2 mt-6 text-white bg-purple-600 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300">
+        Submit Request
+    </button>
+</form>
 </section>
 
 </body>
