@@ -1,44 +1,66 @@
-// Mobile menu functionality
 const mobileMenu = document.querySelector('#mobile-menu');
 const mobileMenuButton = document.querySelector('#mobile-menu-button');
 const closeMenuButton = document.querySelector('#close-menu-button');
+const header = document.querySelector('#main-header');
 
-if (!mobileMenu || !mobileMenuButton || !closeMenuButton) {
-    console.error('menu html elements missing');
+if (!mobileMenu || !mobileMenuButton || !closeMenuButton || !header) {
+    console.error('One or more required HTML elements are missing');
 } else {
+    let isMenuOpen = false;
+
     const toggleMobileMenu = () => {
-        mobileMenu.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden');
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.classList.toggle('hidden', !isMenuOpen);
+        document.body.classList.toggle('overflow-hidden', isMenuOpen);
     };
 
-    mobileMenuButton.addEventListener('click', (e) => {
+    const handleButtonClick = (e) => {
         e.preventDefault();
+        e.stopPropagation();
         toggleMobileMenu();
-    });
+    };
 
-    closeMenuButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        toggleMobileMenu();
-    });
+    mobileMenuButton.addEventListener('click', handleButtonClick);
+    closeMenuButton.addEventListener('click', handleButtonClick);
 
     mobileMenu.querySelectorAll('a').forEach(link => 
-        link.addEventListener('click', toggleMobileMenu)
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const href = link.getAttribute('href');
+            toggleMobileMenu();
+            setTimeout(() => {
+                window.location.href = href;
+            }, 300); // Adjust this delay if needed to match your CSS transition time
+        })
     );
-}
 
-const header = document.querySelector('#main-header');
-let lastScrollY = window.scrollY;
+    const debounce = (func, wait) => {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    };
 
-window.addEventListener('scroll', () => {
-    if (mobileMenu.classList.contains('hidden')) {
-        const currentScrollY = window.scrollY;
-        
-        if (currentScrollY > lastScrollY && currentScrollY > 75) {
-            header.classList.add('-translate-y-full', 'opacity-0');
-        } else {
-            header.classList.remove('-translate-y-full', 'opacity-0');
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = debounce(() => {
+        if (!isMenuOpen) {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > lastScrollY && currentScrollY > 75) {
+                header.classList.add('-translate-y-full', 'opacity-0');
+            } else {
+                header.classList.remove('-translate-y-full', 'opacity-0');
+            }
+            lastScrollY = currentScrollY;
         }
+    }, 100); // Adjust debounce delay as needed
 
-        lastScrollY = currentScrollY;
-    }
-});
+    window.addEventListener('scroll', handleScroll);
+}
