@@ -96,18 +96,25 @@
             </svg>
         </button>
         <nav class="flex flex-col items-center justify-center h-full gap-6">
-          <p class="text-md font-semibold">Menu</p>
           <a href="/resources" class="text-md font-normal hover:text-purple-600 transition-colors">Expert Guides</a>
+          <a href="#" class="text-md font-normal hover:text-purple-600 transition-colors">Release Log</a>
           <a href="/login" class="text-md font-normal hover:text-purple-600 transition-colors">Log In</a>
         </nav>
     </div>
 
-<main class="flex flex-col items-center justify-center gap-2 py-20">
-    <p class="text-xl p-4 md:text-2xl font-normal">Expert Guides</p>
-    <div class="flex flex-col items-center justify-center p-10">
-      <a href="#" class="text-md md:text-lg font-normal text-gray-800 hover:text-purple-600 transition-colors">Data Monetization: Balancing Ethics & Profit</a>
-    </div>
-</main>
+    <main class="flex flex-col items-center justify-center gap-4 py-20">
+      <p class="text-xl font-normal py-10">Expert Guides</p>
+      <a href="#" class="block w-[350px] md:w-full md:max-w-md group">
+        <div class="bg-white p-10 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform group-hover:-translate-y-1">
+          <p class="font-normal text-lg text-gray-600 mb-4 group-hover:text-gray-800 transition-colors duration-300">Data Monetization: Balancing Ethics & Profit</p>
+          <span class="text-blue-500 text-sm font-medium group-hover:underline inline-flex items-center">Read More
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+          </span>
+        </div>
+      </a>
+    </main>
 
 <script src="/dd.js"></script>
 </body>
