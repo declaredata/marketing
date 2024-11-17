@@ -1773,6 +1773,14 @@ select {
   top: 1.25rem;
 }
 
+.top-10 {
+  top: 2.5rem;
+}
+
+.top-8 {
+  top: 2rem;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -2182,6 +2190,11 @@ select {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .pl-6 {
