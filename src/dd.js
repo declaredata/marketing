@@ -40,8 +40,8 @@ const initializeCopyCode = () => {
   if (!codeBlocks.length) return;
 
   const feedbackEl = document.createElement('div');
-  feedbackEl.className = 'fixed top-6 left-1/2 -translate-x-1/2 bg-purple-200 text-gray-800 px-2 py-2 rounded-lg hidden z-50 shadow-md transition-opacity duration-200';
-  feedbackEl.textContent = 'Copied to clipboard. Let\'s go!';
+  feedbackEl.className = 'fixed top-6 left-1/2 -translate-x-1/2 bg-purple-200 text-gray-700 px-2 py-2 rounded-lg hidden z-50 shadow-md transition-opacity duration-200 text-sm text-center font-light';
+  feedbackEl.innerHTML = 'Copied to clipboard.';
   document.body.appendChild(feedbackEl);
 
   codeBlocks.forEach(block => {
