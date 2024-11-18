@@ -305,36 +305,44 @@
               as PySpark and is optimized for working with datasets less than 5TB.
             </p>
 
-            <!-- Feature Comparison Table -->
-            <div class="overflow-x-auto rounded-lg border border-gray-200">
-              <table class="w-full text-left">
-                <thead class="bg-gray-50">
+            <!-- Feature Comparison Table with Vertical Highlight -->
+            <div class="overflow-x-auto rounded-lg border border-gray-300 shadow-md">
+              <table class="w-full border-collapse text-left">
+                <thead class="bg-gradient-to-r from-gray-100 to-gray-200">
                   <tr>
-                    <th class="px-6 py-4 text-sm font-semibold text-gray-900"></th>
-                    <th class="px-6 py-4 text-sm font-semibold text-gray-900">DeclareData Fuse</th>
-                    <th class="px-6 py-4 text-sm font-semibold text-gray-900">Spark Clusters</th>
+                    <th class="px-6 py-4 text-sm font-bold uppercase text-gray-700"></th>
+                    <th class="px-6 py-4 text-sm font-bold uppercase text-gray-700 bg-blue-100">
+                      DeclareData Fuse
+                    </th>
+                    <th class="px-6 py-4 text-sm font-bold uppercase text-gray-700">
+                      Spark Clusters
+                    </th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 bg-white">
-                  <tr>
-                    <td class="px-6 py-4 text-sm text-gray-700">Performance</td>
-                    <td class="px-6 py-4 text-sm text-gray-700">Fast for ~5TB datasets</td>
-                    <td class="px-6 py-4 text-sm text-gray-700">Optimized for largest datasets</td>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 text-sm font-medium text-gray-900">Performance</td>
+                    <td class="px-6 py-4 text-sm text-gray-600 bg-blue-50">
+                      ⚡ Fast for ~5TB datasets
+                    </td>
+                    <td class="px-6 py-4 text-sm text-gray-600">
+                      🏔️ Optimized for largest datasets
+                    </td>
                   </tr>
-                  <tr>
-                    <td class="px-6 py-4 text-sm text-gray-700">Cost</td>
-                    <td class="px-6 py-4 text-sm text-gray-700">Low cost</td>
-                    <td class="px-6 py-4 text-sm text-gray-700">High cost</td>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 text-sm font-medium text-gray-900">Cost</td>
+                    <td class="px-6 py-4 text-sm text-gray-600 bg-blue-50">💸 Low cost</td>
+                    <td class="px-6 py-4 text-sm text-gray-600">💰 High cost</td>
                   </tr>
-                  <tr>
-                    <td class="px-6 py-4 text-sm text-gray-700">Deployment</td>
-                    <td class="px-6 py-4 text-sm text-gray-700">Easy</td>
-                    <td class="px-6 py-4 text-sm text-gray-700">Complex</td>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 text-sm font-medium text-gray-900">Deployment</td>
+                    <td class="px-6 py-4 text-sm text-gray-600 bg-blue-50">🛠️ Easy</td>
+                    <td class="px-6 py-4 text-sm text-gray-600">🔧 Complex</td>
                   </tr>
-                  <tr>
-                    <td class="px-6 py-4 text-sm text-gray-700">Maintenance</td>
-                    <td class="px-6 py-4 text-sm text-gray-700">Low</td>
-                    <td class="px-6 py-4 text-sm text-gray-700">High</td>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 text-sm font-medium text-gray-900">Maintenance</td>
+                    <td class="px-6 py-4 text-sm text-gray-600 bg-blue-50">📉 Low</td>
+                    <td class="px-6 py-4 text-sm text-gray-600">📈 High</td>
                   </tr>
                 </tbody>
               </table>
