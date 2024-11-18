@@ -7,8 +7,6 @@
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "simple-git-hooks": "^2.11.1",
-    "stylelint": "^16.10.0",
-    "stylelint-config-standard": "^36.0.1",
     "tailwindcss": "^3.4.7"
   },
   "simple-git-hooks": {
@@ -17,9 +15,12 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "prettier --write",
-      "eslint --cache --fix"
+      "eslint --fix"
     ],
-    "*.{html,css}": [
+    "*.css": [
+      "prettier --write --parser css"
+    ],
+    "*.html": [
       "prettier --write --parser html"
     ],
     "*.json": [
