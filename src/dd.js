@@ -316,7 +316,7 @@ const initializeDevCycle = () => {
     indicator.style.transform = 'translate(-50%, -50%) translateX(-16px)';
     
     setTimeout(() => {
-      indicator.style.transform = 'translate(-50%, -50%) translateX(16px)';
+      indicator.style.transform = 'translate(-50%, -50%) translateX(150px)';
     }, 100);
 
     setTimeout(() => {
