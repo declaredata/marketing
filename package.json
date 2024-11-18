@@ -25,5 +25,8 @@
     "*.json": [
       "prettier --write"
     ]
+  },
+  "scripts": {
+    "precommit": "lint-staged --allow-empty"
   }
 }
