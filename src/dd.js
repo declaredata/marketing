@@ -2,7 +2,6 @@ const mobileMenu = document.querySelector('#mobile-menu');
 const mobileMenuButton = document.querySelector('#mobile-menu-button');
 const closeMenuButton = document.querySelector('#close-menu-button');
 const header = document.querySelector('#main-header');
-
 if (!mobileMenu || !mobileMenuButton || !closeMenuButton || !header) {
   console.error('One or more required HTML elements are missing');
 } else {
@@ -10,17 +9,14 @@ if (!mobileMenu || !mobileMenuButton || !closeMenuButton || !header) {
     mobileMenu.classList.toggle('hidden');
     document.body.classList.toggle('overflow-hidden');
   };
-
   mobileMenuButton.addEventListener('click', toggleMenu);
   closeMenuButton.addEventListener('click', toggleMenu);
-
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       toggleMenu();
       setTimeout(() => {}, 150);
     });
   });
-
   let lastScrollY = window.scrollY;
   window.addEventListener('scroll', () => {
     if (mobileMenu.classList.contains('hidden')) {
@@ -33,6 +29,72 @@ if (!mobileMenu || !mobileMenuButton || !closeMenuButton || !header) {
     }
   });
 }
+
+const addPlatformStyles = () => {
+  const style = document.createElement('style');
+  style.textContent = `
+    .platform-btn {
+      padding: 0.25rem 0.5rem;
+      color: #6B7280;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+      background: none;
+    }
+    .platform-btn:hover {
+      color: #111827;
+    }
+    .platform-btn.selected {
+      color: #111827;
+    }
+    .platform-btn.selected::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #6B7280;
+      border-radius: 1px;
+    }
+  `;
+  document.head.appendChild(style);
+};
+
+// switch functionality
+const initializePlatformSwitch = () => {
+  const platformBtns = document.querySelectorAll('.platform-btn');
+  const commandTexts = document.querySelectorAll('.command-text');
+  const promptTexts = document.querySelectorAll('.platform-prompt');
+
+  if (!platformBtns.length) return;
+
+  // Ensure first button is selected by default
+  platformBtns[0].classList.add('selected');
+  
+  platformBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update button styles
+      platformBtns.forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+
+      // update command text
+      const platform = btn.dataset.platform;
+      commandTexts.forEach(commandText => {
+        const newCommand = commandText.dataset[platform];
+        if (newCommand) {
+          commandText.textContent = newCommand;
+        }
+      });
+      
+      promptTexts.forEach(promptText => {
+        if (promptText) {
+          promptText.textContent = platform === 'windows' ? '>' : '$';
+        }
+      });
+    });
+  });
+};
 
 // code block copy functionality
 const initializeCopyCode = () => {
@@ -49,7 +111,6 @@ const initializeCopyCode = () => {
     block.addEventListener('click', async () => {
       const textToCopy = block.querySelector('.command-text')?.textContent?.trim();
       if (!textToCopy) return;
-
       try {
         await navigator.clipboard.writeText(textToCopy);
         feedbackEl.classList.remove('hidden');
@@ -73,8 +134,15 @@ const initializeCopyCode = () => {
   });
 };
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializeCopyCode);
-} else {
+// initialize all components
+const initializeAll = () => {
+  addPlatformStyles();
   initializeCopyCode();
+  initializePlatformSwitch();
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeAll);
+} else {
+  initializeAll();
 }
