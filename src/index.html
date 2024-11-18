@@ -149,12 +149,11 @@
 
     </main>
 
-    <section class="flex flex-col items-center justify-center py-12 lg:py-24 bg-white">
-    <div class="container px-4 mx-auto max-w-6xl">
-        <!-- Cost Savings Section -->
-        <div class="grid md:grid-cols-2 gap-12 lg:gap-16 mb-16 lg:mb-24">
+    <section class="py-12 lg:py-24 bg-white">
+    <div class="container px-4 mx-auto max-w-6xl space-y-16 lg:space-y-24">
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
             <div class="flex flex-col justify-center">
-                <h3 class="text-3xl md:text-4xl font-normal mb-4">Cut Spark Costs</h3>
+                <h3 class="text-3xl md:text-4xl font-normal mb-4">Faster, Cheaper Spark</h3>
                 <p class="text-base font-light text-gray-600">
                     Save thousands by slashing unnecessary compute and cluster overhead.
                     Tailored for data workloads up to 5TB—no guesswork required.
@@ -164,7 +163,6 @@
             <div class="flex items-center justify-center">
                 <div class="w-full max-w-[400px] rounded-xl bg-gray-50 p-4 sm:p-6 lg:p-8">
                     <ul class="space-y-6">
-                        <!-- Fuse Server -->
                         <li class="space-y-3">
                             <div class="relative">
                                 <div class="h-3 rounded-[3px] bg-purple-500 transition-all duration-700" id="fuseProgress">
@@ -185,7 +183,6 @@
                             </div>
                         </li>
 
-                        <!-- Spark Cluster -->
                         <li class="space-y-3">
                             <div class="relative">
                                 <div class="flex h-3 items-center">
@@ -210,7 +207,7 @@
                                 <div class="absolute left-0 top-0 h-3 rounded-[3px] bg-white/10"></div>
                             </div>
                             <div class="flex flex-wrap items-center gap-2 text-[12px] tracking-widest text-gray-600">
-                                <p class="font-medium uppercase">Apache Spark</p>
+                                <p class="font-medium uppercase">Spark Cluster</p>
                                 <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded text-xs">SLOWER</span>
                             </div>
                         </li>
@@ -219,23 +216,60 @@
             </div>
         </div>
 
-        <!-- Code Section -->
         <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
-            <div class="flex flex-col justify-center">
-                <h3 class="text-3xl md:text-4xl font-normal mb-4">No Special Code Changes</h3>
-                <p class="text-base font-light text-gray-600">
-                    Works with your existing Spark setup—no migration needed.
-                    Get started in minutes with minimal learning curve and maximum impact.
-                </p>
-            </div>
-            
-            <div class="flex items-center justify-center">
+            <div class="flex items-center justify-center order-2 md:order-1">
                 <div class="w-full max-w-[400px] rounded-xl bg-gray-50 p-4 sm:p-6 lg:p-8">
                     <div class="relative overflow-hidden rounded-lg bg-gray-900 p-4">
                         <div class="min-h-[180px] sm:min-h-[200px]">
                             <pre class="font-mono text-[13px] leading-relaxed text-white/75"><code id="codeDisplay"></code></pre>
                             <div id="codeCursor" class="absolute h-[1.2em] w-[2px] bg-white animate-pulse"></div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col justify-center order-1 md:order-2">
+                <h3 class="text-3xl md:text-4xl font-normal mb-4">No Special Code or Infra</h3>
+                <p class="text-base font-light text-gray-600">
+                    Works with existing Spark setup—no migration needed.
+                    Get started in minutes with minimal learning curve and maximum impact.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+            <div class="flex flex-col justify-center">
+                <h3 class="text-3xl md:text-4xl font-normal mb-4">Fast Dev-to-Prod Cycle</h3>
+                <p class="text-base font-light text-gray-600">
+                    Run Spark on your laptop just like production.
+                    Build and test locally, deploy with confidence.
+                </p>
+            </div>
+            
+            <div class="flex items-center justify-center">
+                <div class="w-full max-w-[400px] rounded-xl bg-gray-50 p-4 sm:p-6 lg:p-8">
+                    <div class="relative flex items-center justify-between py-8" id="devCycle">
+
+                        <div class="flex flex-col items-center gap-2 z-10">
+                            <div class="h-16 w-16 rounded-lg bg-white shadow-sm flex items-center justify-center">
+                                <span class="text-2xl">💻</span>
+                            </div>
+                            <span class="text-sm font-medium text-gray-600">Local</span>
+                        </div>
+
+                        <div class="absolute left-1/2 -translate-x-1/2 w-32 flex items-center justify-center">
+                            <div class="relative w-full h-0.5 bg-gray-200">
+                                <div id="cycleIndicator" class="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-purple-500 shadow-sm transition-all duration-700 opacity-0"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col items-center gap-2 z-10">
+                            <div class="h-16 w-16 rounded-lg bg-white shadow-sm flex items-center justify-center">
+                                <span class="text-2xl">🚀</span>
+                            </div>
+                            <span class="text-sm font-medium text-gray-600">Prod</span>
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -69,16 +69,13 @@ const initializePlatformSwitch = () => {
 
   if (!platformBtns.length) return;
 
-  // Ensure first button is selected by default
   platformBtns[0].classList.add('selected');
   
   platformBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Update button styles
       platformBtns.forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
 
-      // update command text
       const platform = btn.dataset.platform;
       commandTexts.forEach(commandText => {
         const newCommand = commandText.dataset[platform];
@@ -172,11 +169,9 @@ const initializeSpeedComparison = () => {
     fuseTimer.textContent = '0.0';
     sparkTimer.textContent = '0.0';
     
-    // Force reflow
     fuseBar.offsetHeight;
     sparkBar.offsetHeight;
     
-    // Reset transitions
     fuseBar.style.transition = 'width 700ms ease-out';
     sparkBar.style.transition = 'width 3000ms linear';
     sparkLoadingDots.style.transition = 'opacity 300ms ease-out';
@@ -281,23 +276,19 @@ const initializeCodeTyping = () => {
       currentIndex++;
       setTimeout(typeCode, 40); // Slightly faster typing
     } else {
-      // Pause at the end before restarting
       setTimeout(resetAnimation, 2000);
     }
   };
 
-  // Start animation when in view
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         typeCode();
-        // Restart animation periodically
         const intervalId = setInterval(() => {
           resetAnimation();
           setTimeout(typeCode, 500);
-        }, 8000); // Longer pause between cycles
+        }, 8000);
         
-        // Clear interval when out of view
         const exitObserver = new IntersectionObserver((exitEntries) => {
           if (!exitEntries[0].isIntersecting) {
             clearInterval(intervalId);
@@ -316,12 +307,64 @@ const initializeCodeTyping = () => {
   observer.observe(codeDisplay.parentElement);
 };
 
+const initializeDevCycle = () => {
+  const indicator = document.getElementById('cycleIndicator');
+  if (!indicator) return;
+
+  const animateCycle = () => {
+    indicator.style.opacity = '1';
+    indicator.style.transform = 'translate(-50%, -50%) translateX(-16px)';
+    
+    setTimeout(() => {
+      indicator.style.transform = 'translate(-50%, -50%) translateX(16px)';
+    }, 100);
+
+    setTimeout(() => {
+      indicator.style.opacity = '0';
+    }, 800);
+
+    setTimeout(() => {
+      indicator.style.transition = 'none';
+      indicator.style.transform = 'translate(-50%, -50%) translateX(-16px)';
+      setTimeout(() => {
+        indicator.style.transition = 'all 700ms ease-in-out';
+      }, 50);
+    }, 1000);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          indicator.style.transition = 'all 700ms ease-in-out';
+          animateCycle();
+          const intervalId = setInterval(animateCycle, 2000);
+          
+          const exitObserver = new IntersectionObserver((exitEntries) => {
+            if (!exitEntries[0].isIntersecting) {
+              clearInterval(intervalId);
+              observer.observe(entry.target);
+              exitObserver.disconnect();
+            }
+          });
+          exitObserver.observe(entry.target);
+        }, 500);
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  observer.observe(indicator.parentElement);
+};
+
 // initialize all components
 const initializeAll = () => {
   addPlatformStyles();
   initializeCopyCode();
   initializeSpeedComparison();
   initializeCodeTyping();
+  initializeDevCycle();
   initializePlatformSwitch();
 };
 
