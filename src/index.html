@@ -1,287 +1,499 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NTNB02T9M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9NTNB02T9M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-  gtag('config', 'G-9NTNB02T9M');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      gtag('config', 'G-9NTNB02T9M');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DeclareData | Slash Spark Costs, Boost Revenue</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css" />
     <style>
-        @keyframes logo-animation {
-            0% { stroke-dashoffset: 0; }
-            100% { stroke-dashoffset: 18; }
+      @keyframes logo-animation {
+        0% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: 18;
+        }
+      }
+
+      .animate-logo {
+        animation: logo-animation 2s linear infinite;
+      }
+
+      @media (max-width: 767px) {
+        .logo-text {
+          display: none;
         }
 
-        .animate-logo {
-            animation: logo-animation 2s linear infinite;
+        .logo-svg {
+          margin: 0 auto;
         }
+      }
 
-        @media (max-width: 767px) {
-            .logo-text {
-                display: none;
-            }
-            
-            .logo-svg {
-                margin: 0 auto;
-            }
+      @keyframes dataMotion1 {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 1;
         }
+        25% {
+          transform: translateY(-5px);
+          opacity: 0.8;
+        }
+        50% {
+          transform: translateY(5px);
+          opacity: 0.6;
+        }
+        75% {
+          transform: translateY(-10px);
+          opacity: 0.8;
+        }
+      }
+      @keyframes dataMotion2 {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        25% {
+          transform: translateY(-8px);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translateY(10px);
+          opacity: 0.5;
+        }
+        75% {
+          transform: translateY(-6px);
+          opacity: 0.7;
+        }
+      }
+      @keyframes dataMotion3 {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        25% {
+          transform: translateY(-4px);
+          opacity: 0.8;
+        }
+        50% {
+          transform: translateY(8px);
+          opacity: 0.6;
+        }
+        75% {
+          transform: translateY(-12px);
+          opacity: 0.8;
+        }
+      }
+      @keyframes dataMotion4 {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        25% {
+          transform: translateY(-10px);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translateY(12px);
+          opacity: 0.5;
+        }
+        75% {
+          transform: translateY(-8px);
+          opacity: 0.7;
+        }
+      }
 
-        @keyframes dataMotion1 {
-            0%, 100% { transform: translateY(0); opacity: 1; }
-            25% { transform: translateY(-5px); opacity: 0.8; }
-            50% { transform: translateY(5px); opacity: 0.6; }
-            75% { transform: translateY(-10px); opacity: 0.8; }
-        }
-        @keyframes dataMotion2 {
-            0%, 100% { transform: translateY(0); opacity: 1; }
-            25% { transform: translateY(-8px); opacity: 0.7; }
-            50% { transform: translateY(10px); opacity: 0.5; }
-            75% { transform: translateY(-6px); opacity: 0.7; }
-        }
-        @keyframes dataMotion3 {
-            0%, 100% { transform: translateY(0); opacity: 1; }
-            25% { transform: translateY(-4px); opacity: 0.8; }
-            50% { transform: translateY(8px); opacity: 0.6; }
-            75% { transform: translateY(-12px); opacity: 0.8; }
-        }
-        @keyframes dataMotion4 {
-            0%, 100% { transform: translateY(0); opacity: 1; }
-            25% { transform: translateY(-10px); opacity: 0.7; }
-            50% { transform: translateY(12px); opacity: 0.5; }
-            75% { transform: translateY(-8px); opacity: 0.7; }
-        }
-
-        .animate-logo path:nth-child(1) { animation: dataMotion1 2s infinite ease-in-out; }
-        .animate-logo path:nth-child(2) { animation: dataMotion2 2.4s infinite ease-in-out; }
-        .animate-logo path:nth-child(3) { animation: dataMotion3 2s infinite ease-in-out; }
-        .animate-logo path:nth-child(4) { animation: dataMotion4 2.4s infinite ease-in-out; }
+      .animate-logo path:nth-child(1) {
+        animation: dataMotion1 2s infinite ease-in-out;
+      }
+      .animate-logo path:nth-child(2) {
+        animation: dataMotion2 2.4s infinite ease-in-out;
+      }
+      .animate-logo path:nth-child(3) {
+        animation: dataMotion3 2s infinite ease-in-out;
+      }
+      .animate-logo path:nth-child(4) {
+        animation: dataMotion4 2.4s infinite ease-in-out;
+      }
     </style>
-</head>
+  </head>
 
-<body class="flex flex-col min-h-screen bg-gray-50 text-gray-950">
+  <body class="flex flex-col min-h-screen bg-gray-50 text-gray-950">
     <!-- Header -->
-    <header id="main-header" class="fixed top-0 left-0 flex h-20 w-full px-10 transition-all duration-300 ease-in-out backdrop-blur-sm">
-        <div class="flex w-full items-center justify-between">
-              <a href="/" class="flex-inline">
-            <div class="flex items-center">
-                <div class="logo-text text-2xl font-light p-1">Declare</div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="animate-logo logo-svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0.5,4" d="M9 3v18"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0.5,4" d="M15 3v18" class="stroke-purple-600 from-purple-600 via-purple-700"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0.5,4" d="M21 3v18"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0.5,4" d="M3 3v18" class="stroke-purple-600 from-purple-600 via-purple-700"/>
-                </svg>
-                <div class="logo-text text-2xl font-light p-1">Data</div>
-            </div>
-              </a>
+    <header
+      id="main-header"
+      class="fixed top-0 left-0 flex h-20 w-full px-10 transition-all duration-300 ease-in-out backdrop-blur-sm"
+    >
+      <div class="flex w-full items-center justify-between">
+        <a href="/" class="flex-inline">
+          <div class="flex items-center">
+            <div class="logo-text text-2xl font-light p-1">Declare</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="35"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="animate-logo logo-svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                stroke-dasharray="0.5,4"
+                d="M9 3v18"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                stroke-dasharray="0.5,4"
+                d="M15 3v18"
+                class="stroke-purple-600 from-purple-600 via-purple-700"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                stroke-dasharray="0.5,4"
+                d="M21 3v18"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                stroke-dasharray="0.5,4"
+                d="M3 3v18"
+                class="stroke-purple-600 from-purple-600 via-purple-700"
+              />
+            </svg>
+            <div class="logo-text text-2xl font-light p-1">Data</div>
+          </div>
+        </a>
 
-            <!-- Desktop Menu -->
-            <nav class="hidden md:flex items-center gap-6">
-              <a href="/login" class="text-md font-normal hover:text-purple-600 transition-colors">Log In</a>
-            </nav>
-            
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none" aria-label="Toggle menu">
-                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="/login" class="text-md font-normal hover:text-purple-600 transition-colors"
+            >Log In</a
+          >
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="0.75"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
     </header>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-2 bg-white z-50 hidden">
-        <button id="close-menu-button" class="absolute right-6 top-6 text-gray-500 hover:text-gray-700 focus:outline-none p-2" aria-label="Close menu">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
-        <nav class="flex flex-col items-center justify-center h-full gap-6">
-          <a href="/resources" class="text-md font-normal hover:text-purple-600 transition-colors">Expert Guides</a>
-          <a href="#" class="text-md font-normal hover:text-purple-600 transition-colors">Release Log</a>
-          <a href="/login" class="text-md font-normal hover:text-purple-600 transition-colors">Log In</a>
-        </nav>
+      <button
+        id="close-menu-button"
+        class="absolute right-6 top-6 text-gray-500 hover:text-gray-700 focus:outline-none p-2"
+        aria-label="Close menu"
+      >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+      <nav class="flex flex-col items-center justify-center h-full gap-6">
+        <a href="/resources" class="text-md font-normal hover:text-purple-600 transition-colors"
+          >Expert Guides</a
+        >
+        <a href="#" class="text-md font-normal hover:text-purple-600 transition-colors"
+          >Release Log</a
+        >
+        <a href="/login" class="text-md font-normal hover:text-purple-600 transition-colors"
+          >Log In</a
+        >
+      </nav>
     </div>
 
     <!-- Main Content -->
-    <main class="flex flex-grow flex-col items-center justify-center min-h-screen w-full p-2 mt-0 md:mt-12">
-        <h3 class="mb-3 rounded-full bg-purple-200/20 px-5 text-sm font-semibold text-purple-600 transition-opacity duration-700">Beta</h3>
-        <h1 class="mb-5 text-center text-3xl md:text-5xl transition-opacity duration-700">Slash Spark Costs by 50%,<br/> Run Workloads 2x Faster</h1>
-        <h2 class="mb-8 max-w-md md:max-w-lg text-center text-xl md:text-2xl font-light transition-opacity duration-700">
-          <em>Scale down</em> your Spark cluster, enjoy more productivity<em class="italic">—no code changes required.</em>
-        </h2>
+    <main
+      class="flex flex-grow flex-col items-center justify-center min-h-screen w-full p-2 mt-0 md:mt-12"
+    >
+      <h3
+        class="mb-3 rounded-full bg-purple-200/20 px-5 text-sm font-semibold text-purple-600 transition-opacity duration-700"
+      >
+        Beta
+      </h3>
+      <h1 class="mb-5 text-center text-3xl md:text-5xl transition-opacity duration-700">
+        Slash Spark Costs by 50%,<br />
+        Run Workloads 2x Faster
+      </h1>
+      <h2
+        class="mb-8 max-w-md md:max-w-lg text-center text-xl md:text-2xl font-light transition-opacity duration-700"
+      >
+        <em>Scale down</em> your Spark cluster, enjoy more productivity<em class="italic"
+          >—no code changes required.</em
+        >
+      </h2>
 
-<div class="flex min-h-10 w-full max-w-xl flex-wrap items-center justify-center gap-6 transition-opacity duration-700">
-    <div class="flex flex-col w-full gap-2">
-        <div class="flex justify-center gap-4 text-sm">
+      <div
+        class="flex min-h-10 w-full max-w-xl flex-wrap items-center justify-center gap-6 transition-opacity duration-700"
+      >
+        <div class="flex flex-col w-full gap-2">
+          <div class="flex justify-center gap-4 text-sm">
             <button class="platform-btn selected" data-platform="unix">macOS/Linux</button>
             <button class="platform-btn" data-platform="windows">Windows</button>
-        </div>
-        <code class="copy-code-block text-xs md:text-sm inline-flex text-left items-center bg-gray-800 text-white rounded-lg p-4 pl-6 overflow-x-auto whitespace-nowrap relative w-full">
-          <span class="flex gap-4 min-w-0 flex-1 pr-8 hover:font-semibold">
-                <span class="shrink-0 text-gray-500 platform-prompt">$</span>
-                <span class="flex-1 overflow-x-auto">
-                    <span class="command-text whitespace-nowrap" data-unix="curl -LsSf https://declaredata.com/fuse/install.sh | sh" data-windows="iwr https://declaredata.com/fuse/install.ps1 | iex">curl -LsSf https://declaredata.com/fuse/install.sh | sh</span>
-                </span>
+          </div>
+          <code
+            class="copy-code-block text-xs md:text-sm inline-flex text-left items-center bg-gray-800 text-white rounded-lg p-4 pl-6 overflow-x-auto whitespace-nowrap relative w-full"
+          >
+            <span class="flex gap-4 min-w-0 flex-1 pr-8 hover:font-semibold">
+              <span class="shrink-0 text-gray-500 platform-prompt">$</span>
+              <span class="flex-1 overflow-x-auto">
+                <span
+                  class="command-text whitespace-nowrap"
+                  data-unix="curl -LsSf https://declaredata.com/fuse/install.sh | sh"
+                  data-windows="iwr https://declaredata.com/fuse/install.ps1 | iex"
+                  >curl -LsSf https://declaredata.com/fuse/install.sh | sh</span
+                >
+              </span>
             </span>
-            <svg class="copy-icon shrink-0 h-5 w-5 transition text-gray-500 absolute right-4" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"></path>
-                <path d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293-1.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L10.414 13H15v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM15 11h2a1 1 0 110 2h-2v-2z"></path>
+            <svg
+              class="copy-icon shrink-0 h-5 w-5 transition text-gray-500 absolute right-4"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"></path>
+              <path
+                d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293-1.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L10.414 13H15v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM15 11h2a1 1 0 110 2h-2v-2z"
+              ></path>
             </svg>
-        </code>
-    </div>
-</div>
-
-<div class="flex flex-col items-center justify-center gap-4 mt-8">
-          <span>or
-            <a href="#" class="font-normal mt-8 underline">Start Playing</a>
-          </span>
+          </code>
         </div>
+      </div>
 
+      <div class="flex flex-col items-center justify-center gap-4 mt-8">
+        <span
+          >or
+          <a href="#" class="font-normal mt-8 underline">Explore Playground</a>
+        </span>
+      </div>
     </main>
 
-    <section class="py-12 lg:py-24 bg-white pb-8">
-      <div class="container px-4 mx-auto max-w-6xl space-y-16 lg:space-y-24 mb-8">
-        <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
-            <div class="flex flex-col justify-center">
-                <h3 class="text-3xl md:text-4xl font-normal mb-4">Faster, Cheaper Spark</h3>
-                <p class="text-base font-light text-gray-600">
-                    Save thousands by slashing unnecessary compute and cluster overhead.
-                    Tailored for data workloads up to 5TB—no guesswork required.
-                </p>
-            </div>
-            
-            <div class="flex items-center justify-center">
-                <div class="w-full max-w-[400px] rounded-xl bg-gray-50 p-4 sm:p-6 lg:p-8">
-                    <ul class="space-y-6">
-                        <li class="space-y-3">
-                            <div class="relative">
-                                <div class="h-3 rounded-[3px] bg-purple-500 transition-all duration-700" id="fuseProgress">
-                                    <div class="absolute -right-1 top-1/2 -translate-y-1/2">
-                                        <div class="relative h-3 w-3 rounded-full bg-purple-500 shadow-lg">
-                                            <div class="absolute right-0 -translate-x-6 top-1/2 -translate-y-1/2 whitespace-nowrap">
-                                                <span class="font-mono text-sm text-purple-600" id="fuseTimer">0.0</span>
-                                                <span class="font-mono text-sm text-purple-600">s</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="absolute left-0 top-0 h-3 rounded-[3px] bg-white/10"></div>
-                            </div>
-                            <div class="flex flex-wrap items-center gap-2 text-[12px] tracking-widest text-purple-600">
-                                <p class="font-medium uppercase">DeclareData Fuse</p>
-                                <span class="bg-purple-100 text-purple-600 px-2 py-0.5 rounded text-xs">FASTER</span>
-                            </div>
-                        </li>
+    <section class="py-12 lg:py-24 bg-white">
+      <div class="container px-4 mx-auto max-w-6xl space-y-16 lg:space-y-24">
+        <!-- feature cheap spark -->
+        <div
+          class="grid md:grid-cols-2 gap-12 lg:gap-16 opacity-0 transition-opacity duration-700 ease-in motion-safe:animate-fadeIn"
+          data-aos
+        >
+          <div class="flex flex-col justify-center">
+            <h3 class="text-3xl md:text-4xl font-normal mb-4">Faster, Cheaper Spark</h3>
+            <p class="text-base font-light text-gray-600">
+              Save thousands by slashing unnecessary compute and cluster overhead. Tailored for data
+              workloads up to 5TB—no guesswork required.
+            </p>
+          </div>
 
-                        <li class="space-y-3">
-                            <div class="relative">
-                                <div class="flex h-3 items-center">
-                                    <div class="h-3 rounded-[3px] bg-gray-500 transition-all duration-[3000ms]" id="sparkProgress">
-                                        <div class="absolute -right-1 top-1/2 -translate-y-1/2">
-                                            <div class="relative h-3 w-3 rounded-full bg-gray-500 shadow-lg">
-                                                <div class="absolute right-0 -translate-x-6 top-1/2 -translate-y-1/2 whitespace-nowrap">
-                                                    <span class="font-mono text-sm text-gray-600" id="sparkTimer">0.0</span>
-                                                    <span class="font-mono text-sm text-gray-600">s</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="relative opacity-0 transition-opacity" id="sparkLoadingDots">
-                                        <div class="absolute -top-3.5 flex space-x-0.5">
-                                            <div class="font-mono text-lg text-gray-400 animate-pulse">$</div>
-                                            <div class="font-mono text-lg text-gray-400 animate-pulse [animation-delay:200ms]">$</div>
-                                            <div class="font-mono text-lg text-gray-400 animate-pulse [animation-delay:400ms]">$</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="absolute left-0 top-0 h-3 rounded-[3px] bg-white/10"></div>
-                            </div>
-                            <div class="flex flex-wrap items-center gap-2 text-[12px] tracking-widest text-gray-600">
-                                <p class="font-medium uppercase">Spark Cluster</p>
-                                <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded text-xs">SLOWER</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-<div class="grid md:grid-cols-2 gap-12 lg:gap-16">
-    <div class="flex items-center justify-center order-2 md:order-1">
-        <div class="w-full max-w-[400px] rounded-xl bg-gray-50 p-4 sm:p-6 lg:p-8">
-            <div class="relative overflow-hidden rounded-lg bg-gray-900 p-4 aspect-[4/3]">
-                <div class="absolute inset-0 p-4">
-                    <pre class="font-mono text-[13px] leading-relaxed text-white/75 overflow-hidden"><code id="codeDisplay"></code></pre>
-                    <div id="codeCursor" class="absolute h-[1.2em] w-[2px] bg-white animate-pulse"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="flex flex-col justify-center order-1 md:order-2">
-        <h3 class="text-3xl md:text-4xl font-normal mb-4">No Special Code or Infra</h3>
-        <p class="text-base font-light text-gray-600">
-            Works with existing Spark setup—no migration needed.
-            Get started in minutes with minimal learning curve and maximum impact.
-        </p>
-    </div>
-</div>
-
-        <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
-            <div class="flex flex-col justify-center">
-                <h3 class="text-3xl md:text-4xl font-normal mb-4">Fast Dev-to-Prod Cycle</h3>
-                <p class="text-base font-light text-gray-600">
-                    Run Spark on your laptop just like production.
-                    Build and test locally, deploy with confidence.
-                </p>
-            </div>
-            
-            <div class="flex items-center justify-center">
-                <div class="w-full max-w-[400px] rounded-xl bg-gray-50 p-4 sm:p-6 lg:p-8">
-                    <div class="relative flex items-center justify-between py-8" id="devCycle">
-
-                        <div class="flex flex-col items-center gap-2 z-10">
-                            <div class="h-16 w-16 rounded-lg bg-white shadow-sm flex items-center justify-center">
-                                <span class="text-2xl">💻</span>
-                            </div>
-                            <span class="text-sm font-medium text-gray-600">Local</span>
+          <div class="flex items-center justify-center">
+            <div class="w-full max-w-[400px] rounded-xl bg-gray-50 p-4 sm:p-6 lg:p-8">
+              <ul class="space-y-6">
+                <li class="space-y-3">
+                  <div class="relative">
+                    <div
+                      class="h-3 rounded-[3px] bg-purple-500 transition-all duration-700"
+                      id="fuseProgress"
+                    >
+                      <div class="absolute -right-1 top-1/2 -translate-y-1/2">
+                        <div class="relative h-3 w-3 rounded-full bg-purple-500 shadow-lg">
+                          <div
+                            class="absolute right-0 -translate-x-6 top-1/2 -translate-y-1/2 whitespace-nowrap"
+                          >
+                            <span class="font-mono text-sm text-purple-600" id="fuseTimer"
+                              >0.0</span
+                            >
+                            <span class="font-mono text-sm text-purple-600">s</span>
+                          </div>
                         </div>
-
-                        <div class="absolute left-1/2 -translate-x-1/2 w-32 flex items-center justify-center">
-                            <div class="relative w-full h-0.5 bg-gray-200">
-                                <div id="cycleIndicator" class="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-purple-500 shadow-sm transition-all duration-700 opacity-0"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex flex-col items-center gap-2 z-10">
-                            <div class="h-16 w-16 rounded-lg bg-white shadow-sm flex items-center justify-center">
-                                <span class="text-2xl">🚀</span>
-                            </div>
-                            <span class="text-sm font-medium text-gray-600">Prod</span>
-                        </div>
-
+                      </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                    <div class="absolute left-0 top-0 h-3 rounded-[3px] bg-white/10"></div>
+                  </div>
+                  <div
+                    class="flex flex-wrap items-center gap-2 text-[12px] tracking-widest text-purple-600"
+                  >
+                    <p class="font-medium uppercase">DeclareData Fuse</p>
+                    <span class="bg-purple-100 text-purple-600 px-2 py-0.5 rounded text-xs"
+                      >FASTER</span
+                    >
+                  </div>
+                </li>
 
-      <footer class="bg-gray-50 py-6 pt-8">
-        <div class="container mx-auto px-4 text-sm text-center">
-          <p>&copy; 2024 DeclareData. All rights reserved.</p>
+                <li class="space-y-3">
+                  <div class="relative">
+                    <div class="flex h-3 items-center">
+                      <div
+                        class="h-3 rounded-[3px] bg-gray-500 transition-all duration-[3000ms]"
+                        id="sparkProgress"
+                      >
+                        <div class="absolute -right-1 top-1/2 -translate-y-1/2">
+                          <div class="relative h-3 w-3 rounded-full bg-gray-500 shadow-lg">
+                            <div
+                              class="absolute right-0 -translate-x-6 top-1/2 -translate-y-1/2 whitespace-nowrap"
+                            >
+                              <span class="font-mono text-sm text-gray-600" id="sparkTimer"
+                                >0.0</span
+                              >
+                              <span class="font-mono text-sm text-gray-600">s</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="relative opacity-0 transition-opacity" id="sparkLoadingDots">
+                        <div class="absolute -top-3.5 flex space-x-0.5">
+                          <div class="font-mono text-lg text-gray-400 animate-pulse">$</div>
+                          <div
+                            class="font-mono text-lg text-gray-400 animate-pulse [animation-delay:200ms]"
+                          >
+                            $
+                          </div>
+                          <div
+                            class="font-mono text-lg text-gray-400 animate-pulse [animation-delay:400ms]"
+                          >
+                            $
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="absolute left-0 top-0 h-3 rounded-[3px] bg-white/10"></div>
+                  </div>
+                  <div
+                    class="flex flex-wrap items-center gap-2 text-[12px] tracking-widest text-gray-600"
+                  >
+                    <p class="font-medium uppercase">Spark Cluster</p>
+                    <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded text-xs"
+                      >SLOWER</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+
+        <!-- feature no special code -->
+        <div
+          class="grid md:grid-cols-2 gap-12 lg:gap-16 opacity-0 transition-opacity duration-700 ease-in motion-safe:animate-fadeIn"
+          data-aos
+        >
+          <div class="flex items-center justify-center order-2 md:order-1">
+            <div class="w-full max-w-[400px] rounded-xl bg-gray-50 p-4 sm:p-6 lg:p-8">
+              <div class="relative overflow-hidden rounded-lg bg-gray-900 p-4 aspect-[4/3]">
+                <div class="absolute inset-0 p-4">
+                  <pre
+                    class="font-mono text-[13px] leading-relaxed text-white/75 overflow-hidden"
+                  ><code id="codeDisplay"></code></pre>
+                  <div
+                    id="codeCursor"
+                    class="absolute h-[1.2em] w-[2px] bg-white animate-pulse"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-center order-1 md:order-2">
+            <h3 class="text-3xl md:text-4xl font-normal mb-4">No Special Code or Infra</h3>
+            <p class="text-base font-light text-gray-600">
+              Works with existing Spark setup—no migration needed. Get started in minutes with
+              minimal learning curve and maximum impact.
+            </p>
+          </div>
+        </div>
+
+        <!-- feature fast dev cycle -->
+        <div
+          class="grid md:grid-cols-2 gap-12 lg:gap-16 opacity-0 transition-opacity duration-700 ease-in motion-safe:animate-fadeIn"
+          data-aos
+        >
+          <div class="flex flex-col justify-center">
+            <h3 class="text-3xl md:text-4xl font-normal mb-4">Fast Dev-to-Prod Cycle</h3>
+            <p class="text-base font-light text-gray-600">
+              Run Spark on your laptop just like production. Build and test locally, deploy with
+              confidence.
+            </p>
+          </div>
+
+          <div class="flex items-center justify-center">
+            <div class="w-full max-w-[400px] rounded-xl bg-gray-50 p-4 sm:p-6 lg:p-8">
+              <div class="relative flex items-center justify-between py-8" id="devCycle">
+                <div class="flex flex-col items-center gap-2 z-10">
+                  <div
+                    class="h-16 w-16 rounded-lg bg-white shadow-sm flex items-center justify-center"
+                  >
+                    <span class="text-2xl">💻</span>
+                  </div>
+                  <span class="text-sm font-medium text-gray-600">Local</span>
+                </div>
+
+                <div
+                  class="absolute left-1/2 -translate-x-1/2 w-32 flex items-center justify-center"
+                >
+                  <div class="relative w-full h-0.5 bg-gray-200">
+                    <div
+                      id="cycleIndicator"
+                      class="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-purple-500 shadow-sm transition-all duration-700 opacity-0"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 z-10">
+                  <div
+                    class="h-16 w-16 rounded-lg bg-white shadow-sm flex items-center justify-center"
+                  >
+                    <span class="text-2xl">🚀</span>
+                  </div>
+                  <span class="text-sm font-medium text-gray-600">Prod</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-50 py-6 pt-8">
+      <div class="container mx-auto px-4 text-sm text-center">
+        <p>&copy; 2024 DeclareData. All rights reserved.</p>
+      </div>
     </footer>
-<script src="/dd.js"></script>
-</body>
+    <script src="/dd.js"></script>
+  </body>
 </html>

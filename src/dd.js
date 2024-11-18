@@ -11,7 +11,7 @@ if (!mobileMenu || !mobileMenuButton || !closeMenuButton || !header) {
   };
   mobileMenuButton.addEventListener('click', toggleMenu);
   closeMenuButton.addEventListener('click', toggleMenu);
-  mobileMenu.querySelectorAll('a').forEach(link => {
+  mobileMenu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       toggleMenu();
       setTimeout(() => {}, 150);
@@ -22,7 +22,7 @@ if (!mobileMenu || !mobileMenuButton || !closeMenuButton || !header) {
     if (mobileMenu.classList.contains('hidden')) {
       const currentScrollY = window.scrollY;
       const isScrollingDown = currentScrollY > lastScrollY;
-      
+
       header.classList.toggle('-translate-y-full', isScrollingDown && currentScrollY > 75);
       header.classList.toggle('opacity-0', isScrollingDown && currentScrollY > 75);
       lastScrollY = currentScrollY;
@@ -70,21 +70,21 @@ const initializePlatformSwitch = () => {
   if (!platformBtns.length) return;
 
   platformBtns[0].classList.add('selected');
-  
-  platformBtns.forEach(btn => {
+
+  platformBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      platformBtns.forEach(b => b.classList.remove('selected'));
+      platformBtns.forEach((b) => b.classList.remove('selected'));
       btn.classList.add('selected');
 
       const platform = btn.dataset.platform;
-      commandTexts.forEach(commandText => {
+      commandTexts.forEach((commandText) => {
         const newCommand = commandText.dataset[platform];
         if (newCommand) {
           commandText.textContent = newCommand;
         }
       });
-      
-      promptTexts.forEach(promptText => {
+
+      promptTexts.forEach((promptText) => {
         if (promptText) {
           promptText.textContent = platform === 'windows' ? '>' : '$';
         }
@@ -98,9 +98,10 @@ const initializeCopyCode = () => {
   const codeBlocks = document.querySelectorAll('.copy-code-block');
   if (!codeBlocks.length) return;
 
-  codeBlocks.forEach(block => {
+  codeBlocks.forEach((block) => {
     const feedbackEl = document.createElement('div');
-    feedbackEl.className = 'absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-90 hidden font-thin text-purple-600';
+    feedbackEl.className =
+      'absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-90 hidden font-normal text-white text-sm rounded-md';
     feedbackEl.innerHTML = 'Copied to clipboard.';
     block.style.position = 'relative';
     block.appendChild(feedbackEl);
@@ -138,7 +139,7 @@ const initializeSpeedComparison = () => {
   const sparkLoadingDots = document.getElementById('sparkLoadingDots');
   const fuseTimer = document.getElementById('fuseTimer');
   const sparkTimer = document.getElementById('sparkTimer');
-  
+
   if (!fuseBar || !sparkBar || !sparkLoadingDots || !fuseTimer || !sparkTimer) return;
 
   let fuseInterval, sparkInterval;
@@ -149,7 +150,7 @@ const initializeSpeedComparison = () => {
       const progress = Math.min((currentTimestamp - startTimestamp) / duration, 1);
       const current = progress * (end - start) + start;
       element.textContent = current.toFixed(decimals);
-      
+
       if (progress < 1) {
         requestAnimationFrame(step);
       }
@@ -168,10 +169,10 @@ const initializeSpeedComparison = () => {
     sparkLoadingDots.style.opacity = '0';
     fuseTimer.textContent = '0.0';
     sparkTimer.textContent = '0.0';
-    
+
     fuseBar.offsetHeight;
     sparkBar.offsetHeight;
-    
+
     fuseBar.style.transition = 'width 700ms ease-out';
     sparkBar.style.transition = 'width 3000ms linear';
     sparkLoadingDots.style.transition = 'opacity 300ms ease-out';
@@ -179,21 +180,21 @@ const initializeSpeedComparison = () => {
 
   const startAnimation = () => {
     resetBars();
-   
+
     // speed up fuse progress
     setTimeout(() => {
       fuseBar.style.width = '15%';
       animateNumber(fuseTimer, 0, 15.2, 1500, 1);
     }, 100);
-    
+
     // slow down spark progress
     setTimeout(() => {
       sparkBar.style.width = '30%';
       sparkLoadingDots.style.opacity = '1';
       animateNumber(sparkTimer, 0, 36.0, 3000, 1);
     }, 100);
-    
-    // reset after animation 
+
+    // reset after animation
     setTimeout(() => {
       sparkLoadingDots.style.opacity = '0';
       setTimeout(resetBars, 250);
@@ -201,25 +202,28 @@ const initializeSpeedComparison = () => {
   };
 
   // start animation when in view
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        startAnimation();
-        const intervalId = setInterval(startAnimation, 4500);
-        
-        const exitObserver = new IntersectionObserver((exitEntries) => {
-          if (!exitEntries[0].isIntersecting) {
-            clearInterval(intervalId);
-            observer.observe(entry.target);
-            exitObserver.disconnect();
-          }
-        });
-        exitObserver.observe(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.5
-  });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startAnimation();
+          const intervalId = setInterval(startAnimation, 4500);
+
+          const exitObserver = new IntersectionObserver((exitEntries) => {
+            if (!exitEntries[0].isIntersecting) {
+              clearInterval(intervalId);
+              observer.observe(entry.target);
+              exitObserver.disconnect();
+            }
+          });
+          exitObserver.observe(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
 
   observer.observe(document.querySelector('.space-y-6'));
 };
@@ -227,7 +231,7 @@ const initializeSpeedComparison = () => {
 const initializeCodeTyping = () => {
   const codeDisplay = document.getElementById('codeDisplay');
   const cursor = document.getElementById('codeCursor');
-  
+
   if (!codeDisplay || !cursor) return;
 
   const code = [
@@ -250,7 +254,7 @@ const initializeCodeTyping = () => {
     const lines = currentText.split('\n');
     const lastLine = lines[lines.length - 1];
     const lastLineElement = Array.from(codeDisplay.childNodes).pop();
-    
+
     if (lastLineElement) {
       const lineHeight = parseInt(window.getComputedStyle(codeDisplay).lineHeight);
       const totalLines = lines.length;
@@ -280,29 +284,32 @@ const initializeCodeTyping = () => {
     }
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        typeCode();
-        const intervalId = setInterval(() => {
-          resetAnimation();
-          setTimeout(typeCode, 500);
-        }, 8000);
-        
-        const exitObserver = new IntersectionObserver((exitEntries) => {
-          if (!exitEntries[0].isIntersecting) {
-            clearInterval(intervalId);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          typeCode();
+          const intervalId = setInterval(() => {
             resetAnimation();
-            observer.observe(entry.target);
-            exitObserver.disconnect();
-          }
-        });
-        exitObserver.observe(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.5
-  });
+            setTimeout(typeCode, 500);
+          }, 8000);
+
+          const exitObserver = new IntersectionObserver((exitEntries) => {
+            if (!exitEntries[0].isIntersecting) {
+              clearInterval(intervalId);
+              resetAnimation();
+              observer.observe(entry.target);
+              exitObserver.disconnect();
+            }
+          });
+          exitObserver.observe(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
 
   observer.observe(codeDisplay.parentElement);
 };
@@ -314,7 +321,7 @@ const initializeDevCycle = () => {
   const animateCycle = () => {
     indicator.style.opacity = '1';
     indicator.style.transform = 'translate(-50%, -50%) translateX(-16px)';
-    
+
     setTimeout(() => {
       indicator.style.transform = 'translate(-50%, -50%) translateX(150px)';
     }, 100);
@@ -332,30 +339,52 @@ const initializeDevCycle = () => {
     }, 1000);
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          indicator.style.transition = 'all 700ms ease-in-out';
-          animateCycle();
-          const intervalId = setInterval(animateCycle, 2000);
-          
-          const exitObserver = new IntersectionObserver((exitEntries) => {
-            if (!exitEntries[0].isIntersecting) {
-              clearInterval(intervalId);
-              observer.observe(entry.target);
-              exitObserver.disconnect();
-            }
-          });
-          exitObserver.observe(entry.target);
-        }, 500);
-      }
-    });
-  }, {
-    threshold: 0.5
-  });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            indicator.style.transition = 'all 700ms ease-in-out';
+            animateCycle();
+            const intervalId = setInterval(animateCycle, 2000);
+
+            const exitObserver = new IntersectionObserver((exitEntries) => {
+              if (!exitEntries[0].isIntersecting) {
+                clearInterval(intervalId);
+                observer.observe(entry.target);
+                exitObserver.disconnect();
+              }
+            });
+            exitObserver.observe(entry.target);
+          }, 500);
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
 
   observer.observe(indicator.parentElement);
+};
+
+const initializeScrollFade = () => {
+  const observerOptions = {
+    threshold: 0.25,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100');
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('[data-aos]').forEach((element) => {
+    observer.observe(element);
+  });
 };
 
 // initialize all components
@@ -366,6 +395,7 @@ const initializeAll = () => {
   initializeCodeTyping();
   initializeDevCycle();
   initializePlatformSwitch();
+  initializeScrollFade();
 };
 
 if (document.readyState === 'loading') {
