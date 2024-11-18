@@ -1,132 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NTNB02T9M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9NTNB02T9M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-  gtag('config', 'G-9NTNB02T9M');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      gtag('config', 'G-9NTNB02T9M');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DeclareData - Resources</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css" />
     <style>
-        @keyframes logo-animation {
-            0% { stroke-dashoffset: 0; }
-            100% { stroke-dashoffset: 18; }
+      @keyframes logo-animation {
+        0% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: 18;
+        }
+      }
+
+      .animate-logo {
+        animation: logo-animation 2s linear infinite;
+      }
+
+      @media (max-width: 767px) {
+        .logo-text {
+          display: none;
         }
 
-        .animate-logo {
-            animation: logo-animation 2s linear infinite;
+        .logo-svg {
+          margin: 0 auto;
         }
+      }
 
-        @media (max-width: 767px) {
-            .logo-text {
-                display: none;
-            }
-            
-            .logo-svg {
-                margin: 0 auto;
-            }
+      @keyframes dataMotion1 {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 1;
         }
+        25% {
+          transform: translateY(-5px);
+          opacity: 0.8;
+        }
+        50% {
+          transform: translateY(5px);
+          opacity: 0.6;
+        }
+        75% {
+          transform: translateY(-10px);
+          opacity: 0.8;
+        }
+      }
+      @keyframes dataMotion2 {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        25% {
+          transform: translateY(-8px);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translateY(10px);
+          opacity: 0.5;
+        }
+        75% {
+          transform: translateY(-6px);
+          opacity: 0.7;
+        }
+      }
+      @keyframes dataMotion3 {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        25% {
+          transform: translateY(-4px);
+          opacity: 0.8;
+        }
+        50% {
+          transform: translateY(8px);
+          opacity: 0.6;
+        }
+        75% {
+          transform: translateY(-12px);
+          opacity: 0.8;
+        }
+      }
+      @keyframes dataMotion4 {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        25% {
+          transform: translateY(-10px);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translateY(12px);
+          opacity: 0.5;
+        }
+        75% {
+          transform: translateY(-8px);
+          opacity: 0.7;
+        }
+      }
 
-        @keyframes dataMotion1 {
-            0%, 100% { transform: translateY(0); opacity: 1; }
-            25% { transform: translateY(-5px); opacity: 0.8; }
-            50% { transform: translateY(5px); opacity: 0.6; }
-            75% { transform: translateY(-10px); opacity: 0.8; }
-        }
-        @keyframes dataMotion2 {
-            0%, 100% { transform: translateY(0); opacity: 1; }
-            25% { transform: translateY(-8px); opacity: 0.7; }
-            50% { transform: translateY(10px); opacity: 0.5; }
-            75% { transform: translateY(-6px); opacity: 0.7; }
-        }
-        @keyframes dataMotion3 {
-            0%, 100% { transform: translateY(0); opacity: 1; }
-            25% { transform: translateY(-4px); opacity: 0.8; }
-            50% { transform: translateY(8px); opacity: 0.6; }
-            75% { transform: translateY(-12px); opacity: 0.8; }
-        }
-        @keyframes dataMotion4 {
-            0%, 100% { transform: translateY(0); opacity: 1; }
-            25% { transform: translateY(-10px); opacity: 0.7; }
-            50% { transform: translateY(12px); opacity: 0.5; }
-            75% { transform: translateY(-8px); opacity: 0.7; }
-        }
-
-        .animate-logo path:nth-child(1) { animation: dataMotion1 2s infinite ease-in-out; }
-        .animate-logo path:nth-child(2) { animation: dataMotion2 2.4s infinite ease-in-out; }
-        .animate-logo path:nth-child(3) { animation: dataMotion3 2s infinite ease-in-out; }
-        .animate-logo path:nth-child(4) { animation: dataMotion4 2.4s infinite ease-in-out; }
+      .animate-logo path:nth-child(1) {
+        animation: dataMotion1 2s infinite ease-in-out;
+      }
+      .animate-logo path:nth-child(2) {
+        animation: dataMotion2 2.4s infinite ease-in-out;
+      }
+      .animate-logo path:nth-child(3) {
+        animation: dataMotion3 2s infinite ease-in-out;
+      }
+      .animate-logo path:nth-child(4) {
+        animation: dataMotion4 2.4s infinite ease-in-out;
+      }
     </style>
-</head>
+  </head>
 
-<body class="flex flex-col min-h-screen bg-gray-50 text-gray-950">
+  <body class="flex flex-col min-h-screen bg-gray-50 text-gray-950">
     <!-- Header -->
-    <header id="main-header" class="fixed top-0 left-0 flex h-20 w-full px-10 transition-all duration-300 ease-in-out backdrop-blur-sm">
-        <div class="flex w-full items-center justify-between">
-              <a href="/" class="flex-inline">
-            <div class="flex items-center">
-                <div class="logo-text text-2xl font-light p-1">Declare</div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="animate-logo logo-svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0.5,4" d="M9 3v18"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0.5,4" d="M15 3v18" class="stroke-purple-600 from-purple-600 via-purple-700"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0.5,4" d="M21 3v18"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="0.5,4" d="M3 3v18" class="stroke-purple-600 from-purple-600 via-purple-700"/>
-                </svg>
-                <div class="logo-text text-2xl font-light p-1">Data</div>
-            </div>
-              </a>
+    <header
+      id="main-header"
+      class="fixed top-0 left-0 flex h-20 w-full px-10 transition-all duration-300 ease-in-out backdrop-blur-sm"
+    >
+      <div class="flex w-full items-center justify-between">
+        <a href="/" class="flex-inline">
+          <div class="flex items-center">
+            <div class="logo-text text-2xl font-light p-1">Declare</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="35"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="animate-logo logo-svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                stroke-dasharray="0.5,4"
+                d="M9 3v18"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                stroke-dasharray="0.5,4"
+                d="M15 3v18"
+                class="stroke-purple-600 from-purple-600 via-purple-700"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                stroke-dasharray="0.5,4"
+                d="M21 3v18"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                stroke-dasharray="0.5,4"
+                d="M3 3v18"
+                class="stroke-purple-600 from-purple-600 via-purple-700"
+              />
+            </svg>
+            <div class="logo-text text-2xl font-light p-1">Data</div>
+          </div>
+        </a>
 
-            <!-- Desktop Menu -->
-            <nav class="hidden md:flex items-center gap-6">
-              <a href="/login" class="text-md font-normal hover:text-purple-600 transition-colors">Log In</a>
-            </nav>
-            
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none" aria-label="Toggle menu">
-                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="/login" class="text-md font-normal hover:text-purple-600 transition-colors"
+            >Log In</a
+          >
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="0.75"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
     </header>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-2 bg-white z-50 hidden">
-        <button id="close-menu-button" class="absolute right-6 top-6 text-gray-500 hover:text-gray-700 focus:outline-none p-2" aria-label="Close menu">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
-        <nav class="flex flex-col items-center justify-center h-full gap-6">
-          <a href="/resources" class="text-md font-normal hover:text-purple-600 transition-colors">Expert Guides</a>
-          <a href="#" class="text-md font-normal hover:text-purple-600 transition-colors">Release Log</a>
-          <a href="/login" class="text-md font-normal hover:text-purple-600 transition-colors">Log In</a>
-        </nav>
+      <button
+        id="close-menu-button"
+        class="absolute right-6 top-6 text-gray-500 hover:text-gray-700 focus:outline-none p-2"
+        aria-label="Close menu"
+      >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+      <nav class="flex flex-col items-center justify-center h-full gap-6">
+        <a
+          href="/resources/playground"
+          class="text-md font-normal hover:text-purple-600 transition-colors"
+          >Playground</a
+        >
+        <a href="#" class="text-md font-normal hover:text-purple-600 transition-colors"
+          >Release Log</a
+        >
+        <a href="/login" class="text-md font-normal hover:text-purple-600 transition-colors"
+          >Log In</a
+        >
+      </nav>
     </div>
 
     <main class="flex flex-col items-center justify-center gap-4 py-20">
       <section class="flex flex-col items-center justify-center px-6">
-      <p class="text-xl font-normal py-10">Expert Guides</p>
-      <a href="#" class="block w-[350px] md:w-full md:max-w-md group">
-        <div class="bg-white p-10 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform group-hover:-translate-y-1">
-          <p class="font-normal text-lg text-gray-600 mb-4 group-hover:text-gray-800 transition-colors duration-300">Data Monetization: Balancing Ethics & Profit</p>
-          <span class="text-blue-500 text-sm font-medium group-hover:underline inline-flex items-center">Read More
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-          </span>
-        </div>
-      </a>
-    </section>
+        <p class="text-xl font-normal py-10">Resources</p>
+        <a href="/resources/playground" class="block w-[350px] md:w-full md:max-w-md group">
+          <div
+            class="bg-white p-10 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform group-hover:-translate-y-1"
+          >
+            <p
+              class="font-normal text-lg text-gray-600 mb-4 group-hover:text-gray-800 transition-colors duration-300"
+            >
+              Playground
+            </p>
+            <span
+              class="text-blue-500 text-sm font-medium group-hover:underline inline-flex items-center"
+              >Read More
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </section>
     </main>
 
-<script src="/dd.js"></script>
-</body>
+    <script src="/dd.js"></script>
+  </body>
 </html>
