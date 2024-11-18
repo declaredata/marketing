@@ -229,11 +229,99 @@ const initializeSpeedComparison = () => {
   observer.observe(document.querySelector('.space-y-6'));
 };
 
+const initializeCodeTyping = () => {
+  const codeDisplay = document.getElementById('codeDisplay');
+  const cursor = document.getElementById('codeCursor');
+  
+  if (!codeDisplay || !cursor) return;
+
+  const code = [
+    'df = spark.read.parquet("s3://data/sales.parquet")',
+    'result = df.groupBy("category")\\',
+    '         .agg(sum("amount").alias("total"))\\',
+    '         .orderBy("total", ascending=False)',
+    'df.alias("a").join(df.alias("b"), col("a.id") == col("b.id"))\\',
+    '  .select("a.id", "b.id")\\',
+    '  .window(Window.partitionBy("a.id").orderBy("b.id")\\',
+    '         .rowsBetween(-1, 1))\\',
+    '  .agg(sum("a.id").alias("sum"))',
+    '',
+  ].join('\n');
+
+  let currentText = '';
+  let currentIndex = 0;
+
+  const updateCursorPosition = () => {
+    const lines = currentText.split('\n');
+    const lastLine = lines[lines.length - 1];
+    const lastLineElement = Array.from(codeDisplay.childNodes).pop();
+    
+    if (lastLineElement) {
+      const lineHeight = parseInt(window.getComputedStyle(codeDisplay).lineHeight);
+      const totalLines = lines.length;
+      cursor.style.top = `${(totalLines - 1) * lineHeight + 16}px`; // 16px for padding
+      cursor.style.left = `${lastLine.length * 7.8 + 16}px`; // Approximate character width + padding
+    }
+  };
+
+  const resetAnimation = () => {
+    currentText = '';
+    currentIndex = 0;
+    codeDisplay.textContent = '';
+    cursor.style.opacity = '1';
+    cursor.style.top = '16px';
+    cursor.style.left = '16px';
+  };
+
+  const typeCode = () => {
+    if (currentIndex < code.length) {
+      currentText += code[currentIndex];
+      codeDisplay.textContent = currentText;
+      updateCursorPosition();
+      currentIndex++;
+      setTimeout(typeCode, 40); // Slightly faster typing
+    } else {
+      // Pause at the end before restarting
+      setTimeout(resetAnimation, 2000);
+    }
+  };
+
+  // Start animation when in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        typeCode();
+        // Restart animation periodically
+        const intervalId = setInterval(() => {
+          resetAnimation();
+          setTimeout(typeCode, 500);
+        }, 8000); // Longer pause between cycles
+        
+        // Clear interval when out of view
+        const exitObserver = new IntersectionObserver((exitEntries) => {
+          if (!exitEntries[0].isIntersecting) {
+            clearInterval(intervalId);
+            resetAnimation();
+            observer.observe(entry.target);
+            exitObserver.disconnect();
+          }
+        });
+        exitObserver.observe(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  observer.observe(codeDisplay.parentElement);
+};
+
 // initialize all components
 const initializeAll = () => {
   addPlatformStyles();
   initializeCopyCode();
   initializeSpeedComparison();
+  initializeCodeTyping();
   initializePlatformSwitch();
 };
 
