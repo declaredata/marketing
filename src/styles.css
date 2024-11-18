@@ -1910,6 +1910,10 @@ select {
   width: 100%;
 }
 
+.min-w-0 {
+  min-width: 0px;
+}
+
 .max-w-\[30rem\] {
   max-width: 30rem;
 }
@@ -2012,8 +2016,20 @@ select {
   overflow: hidden;
 }
 
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
 .whitespace-break-spaces {
   white-space: break-spaces;
+}
+
+.text-nowrap {
+  text-wrap: nowrap;
 }
 
 .rounded {
