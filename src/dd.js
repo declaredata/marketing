@@ -101,12 +101,14 @@ const initializeCopyCode = () => {
   const codeBlocks = document.querySelectorAll('.copy-code-block');
   if (!codeBlocks.length) return;
 
-  const feedbackEl = document.createElement('div');
-  feedbackEl.className = 'fixed top-6 left-1/2 -translate-x-1/2 bg-purple-200 text-gray-700 px-2 py-2 rounded-lg hidden z-50 shadow-md transition-opacity duration-200 text-sm text-center font-light';
-  feedbackEl.innerHTML = 'Copied to clipboard.';
-  document.body.appendChild(feedbackEl);
-
   codeBlocks.forEach(block => {
+    // Create feedback element inside each code block
+    const feedbackEl = document.createElement('div');
+    feedbackEl.className = 'absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-80 hidden font-extralight';
+    feedbackEl.innerHTML = 'Copied to clipboard.';
+    block.style.position = 'relative'; // Ensure absolute positioning works
+    block.appendChild(feedbackEl);
+
     block.classList.add('cursor-pointer');
     block.addEventListener('click', async () => {
       const textToCopy = block.querySelector('.command-text')?.textContent?.trim();
@@ -116,7 +118,7 @@ const initializeCopyCode = () => {
         feedbackEl.classList.remove('hidden');
         setTimeout(() => {
           feedbackEl.classList.add('hidden');
-        }, 2000);
+        }, 1000); // Reduced time since it's more visible now
       } catch (err) {
         console.error('Failed to copy text:', err);
       }
