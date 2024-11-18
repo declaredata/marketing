@@ -2509,6 +2509,14 @@ select {
   left: 50%;
 }
 
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
+.bottom-20 {
+  bottom: 5rem;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -2615,6 +2623,10 @@ select {
   margin-top: 4rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -2637,6 +2649,10 @@ select {
 
 .hidden {
   display: none;
+}
+
+.aspect-\[4\/3\] {
+  aspect-ratio: 4/3;
 }
 
 .h-20 {
@@ -3147,6 +3163,11 @@ select {
   padding-bottom: 2rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .pl-6 {
   padding-left: 1.5rem;
 }
@@ -3157,6 +3178,26 @@ select {
 
 .pr-8 {
   padding-right: 2rem;
+}
+
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .text-left {
