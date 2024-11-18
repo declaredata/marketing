@@ -104,7 +104,7 @@ const initializeCopyCode = () => {
   codeBlocks.forEach(block => {
     // Create feedback element inside each code block
     const feedbackEl = document.createElement('div');
-    feedbackEl.className = 'absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-80 hidden font-extralight';
+    feedbackEl.className = 'absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-90 hidden font-thin text-purple-600';
     feedbackEl.innerHTML = 'Copied to clipboard.';
     block.style.position = 'relative'; // Ensure absolute positioning works
     block.appendChild(feedbackEl);
