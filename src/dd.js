@@ -102,11 +102,10 @@ const initializeCopyCode = () => {
   if (!codeBlocks.length) return;
 
   codeBlocks.forEach(block => {
-    // Create feedback element inside each code block
     const feedbackEl = document.createElement('div');
     feedbackEl.className = 'absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-90 hidden font-thin text-purple-600';
     feedbackEl.innerHTML = 'Copied to clipboard.';
-    block.style.position = 'relative'; // Ensure absolute positioning works
+    block.style.position = 'relative';
     block.appendChild(feedbackEl);
 
     block.classList.add('cursor-pointer');
@@ -118,7 +117,7 @@ const initializeCopyCode = () => {
         feedbackEl.classList.remove('hidden');
         setTimeout(() => {
           feedbackEl.classList.add('hidden');
-        }, 1000); // Reduced time since it's more visible now
+        }, 1000);
       } catch (err) {
         console.error('Failed to copy text:', err);
       }
@@ -136,10 +135,105 @@ const initializeCopyCode = () => {
   });
 };
 
+const initializeSpeedComparison = () => {
+  const fuseBar = document.getElementById('fuseProgress');
+  const sparkBar = document.getElementById('sparkProgress');
+  const sparkLoadingDots = document.getElementById('sparkLoadingDots');
+  const fuseTimer = document.getElementById('fuseTimer');
+  const sparkTimer = document.getElementById('sparkTimer');
+  
+  if (!fuseBar || !sparkBar || !sparkLoadingDots || !fuseTimer || !sparkTimer) return;
+
+  let fuseInterval, sparkInterval;
+
+  const animateNumber = (element, start, end, duration, decimals = 1) => {
+    const startTimestamp = performance.now();
+    const step = (currentTimestamp) => {
+      const progress = Math.min((currentTimestamp - startTimestamp) / duration, 1);
+      const current = progress * (end - start) + start;
+      element.textContent = current.toFixed(decimals);
+      
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+    requestAnimationFrame(step);
+  };
+
+  const resetBars = () => {
+    if (fuseInterval) clearInterval(fuseInterval);
+    if (sparkInterval) clearInterval(sparkInterval);
+
+    fuseBar.style.transition = 'none';
+    sparkBar.style.transition = 'none';
+    fuseBar.style.width = '0%';
+    sparkBar.style.width = '0%';
+    sparkLoadingDots.style.opacity = '0';
+    fuseTimer.textContent = '0.0';
+    sparkTimer.textContent = '0.0';
+    
+    // Force reflow
+    fuseBar.offsetHeight;
+    sparkBar.offsetHeight;
+    
+    // Reset transitions
+    fuseBar.style.transition = 'width 700ms ease-out';
+    sparkBar.style.transition = 'width 3000ms linear';
+    sparkLoadingDots.style.transition = 'opacity 300ms ease-out';
+  };
+
+  const startAnimation = () => {
+    resetBars();
+   
+    // speed up fuse progress
+    setTimeout(() => {
+      fuseBar.style.width = '15%';
+      animateNumber(fuseTimer, 0, 15.2, 1500, 1);
+    }, 100);
+    
+    // slow down spark progress
+    setTimeout(() => {
+      sparkBar.style.width = '30%';
+      sparkLoadingDots.style.opacity = '1';
+      animateNumber(sparkTimer, 0, 36.0, 3000, 1);
+    }, 100);
+    
+    // reset after animation 
+    setTimeout(() => {
+      sparkLoadingDots.style.opacity = '0';
+      setTimeout(resetBars, 250);
+    }, 3500);
+  };
+
+  // start animation when in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startAnimation();
+        const intervalId = setInterval(startAnimation, 4500);
+        
+        const exitObserver = new IntersectionObserver((exitEntries) => {
+          if (!exitEntries[0].isIntersecting) {
+            clearInterval(intervalId);
+            observer.observe(entry.target);
+            exitObserver.disconnect();
+          }
+        });
+        exitObserver.observe(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  observer.observe(document.querySelector('.space-y-6'));
+};
+
 // initialize all components
 const initializeAll = () => {
   addPlatformStyles();
   initializeCopyCode();
+  initializeSpeedComparison();
   initializePlatformSwitch();
 };
 

@@ -143,15 +143,70 @@
 
         <div class="flex flex-col items-center justify-center gap-4 mt-8">
           <span>or
-            <a href="#" class="font-normal mt-8 underline">Start Exploring</a>
+            <a href="#" class="font-normal mt-8 underline">Start Playing</a>
           </span>
         </div>
 
-    <div class="flex flex-col items-center justify-center pt-24">
-      <a href="#highlights" class="flex items-center justify-center gap-2 text-gray-600">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon"><!--!Font Awesome Pro 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc.--><path d="M224 374.6l11.3-11.3 160-160L406.6 192 384 169.4l-11.3 11.3L224 329.4 75.3 180.7 64 169.4 41.4 192l11.3 11.3 160 160L224 374.6z"/></svg>
-      </a>
+<div class="mt-6 w-full max-w-[400px] space-y-6 rounded-xl bg-gray-50 p-4 sm:p-6 mx-auto lg:space-y-10 lg:p-12">
+    <div>
+        <ul class="space-y-6 rounded-xl">
+            <!-- Fuse Server -->
+            <li class="space-y-3">
+                <div class="relative">
+                    <div class="h-3 rounded-[3px] bg-purple-500 transition-all duration-700" id="fuseProgress">
+                        <div class="absolute -right-1 top-1/2 -translate-y-1/2">
+                            <div class="relative h-5 w-5 rounded-full bg-purple-500 shadow-lg">
+                                <div class="absolute right-0 -translate-x-6 top-1/2 -translate-y-1/2 whitespace-nowrap">
+                                    <span class="font-mono text-sm text-purple-600" id="fuseTimer">0.0</span>
+                                    <span class="font-mono text-sm text-purple-600">s</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute left-0 top-0 h-3 rounded-[3px] bg-white/10"></div>
+                </div>
+                <div class="flex flex-wrap items-center gap-2 text-[12px] tracking-widest text-purple-600">
+                    <p class="font-medium uppercase">DeclareData Fuse</p>
+                    <span class="bg-purple-100 text-purple-600 px-2 py-0.5 rounded text-xs">FASTER</span>
+                </div>
+            </li>
+
+            <!-- Spark Cluster -->
+            <li class="space-y-3">
+                <div class="relative">
+                    <div class="flex h-3 items-center">
+                        <div class="h-3 rounded-[3px] bg-gray-500 transition-all duration-[3000ms]" id="sparkProgress">
+                            <div class="absolute -right-1 top-1/2 -translate-y-1/2">
+                                <div class="relative h-5 w-5 rounded-full bg-gray-500 shadow-lg">
+                                    <div class="absolute right-0 -translate-x-6 top-1/2 -translate-y-1/2 whitespace-nowrap">
+                                        <span class="font-mono text-sm text-gray-600" id="sparkTimer">0</span>
+                                        <span class="font-mono text-sm text-gray-600">s</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative -ml-0 opacity-0 transition-opacity" id="sparkLoadingDots">
+    <div class="absolute -top-3.5 flex">
+        <div class="font-mono text-lg text-gray-400 animate-pulse">$</div>
+        <div class="font-mono text-lg text-gray-400 animate-pulse [animation-delay:200ms]">$</div>
+        <div class="font-mono text-lg text-gray-400 animate-pulse [animation-delay:400ms]">$</div>
     </div>
+</div>
+
+                    </div>
+                    <div class="absolute left-0 top-0 h-3 rounded-[3px] bg-white/10"></div>
+                </div>
+                <div class="flex flex-wrap items-center gap-2 text-[12px] tracking-widest text-gray-600">
+                    <p class="font-medium uppercase">Apache Spark</p>
+                    <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded text-xs">SLOWER</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
     </main>
 
   <section class="flex flex-col items-center justify-center px-6 bg-white">
