@@ -158,7 +158,7 @@ install_fuse() {
             mkdir -p "$INSTALL_DIR/../lib" && \
             cp -rf fuse-dist/lib/* "$INSTALL_DIR/../lib/" || exit 1
         fi
-    ) & spin "Installing Fuse" $! || error "Installation failed"
+    ) & spin "Installed Fuse" $! || error "Installation failed"
     
     status "Creating configuration..."
     (
@@ -175,7 +175,7 @@ file = "fuse.log"
 EOF
         
         mkdir -p "${HOME}/.local/share/fuse/data"
-    ) & spin "Creating configuration" $! || error "Configuration failed"
+    ) & spin "Created config" $! || error "Configuration failed"
     
     if [ ! -x "$INSTALL_DIR/fuse" ]; then
         error "Installation verification failed"
