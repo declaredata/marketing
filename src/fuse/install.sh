@@ -136,7 +136,7 @@ install_fuse() {
         else
             error "Either curl or wget is required"
         fi
-    ) & spin "Downloading Fuse package" $! || error "Download failed"
+    ) & spin "Downloaded Fuse package!" $! || error "Download failed"
     
     status "Installing..."
     (
@@ -158,7 +158,7 @@ install_fuse() {
             mkdir -p "$INSTALL_DIR/../lib" && \
             cp -rf fuse-dist/lib/* "$INSTALL_DIR/../lib/" || exit 1
         fi
-    ) & spin "Installed Fuse" $! || error "Installation failed"
+    ) & spin "Installed Fuse!" $! || error "Installation failed"
     
     status "Creating configuration..."
     (
@@ -175,7 +175,7 @@ file = "fuse.log"
 EOF
         
         mkdir -p "${HOME}/.local/share/fuse/data"
-    ) & spin "Created config" $! || error "Configuration failed"
+    ) & spin "Created config toml here: ${CONFIG_DIR}" $! || error "Configuration failed"
     
     if [ ! -x "$INSTALL_DIR/fuse" ]; then
         error "Installation verification failed"
@@ -236,14 +236,17 @@ main() {
     echo
     success "Installation Complete!"
     echo
-    echo "${BOLD}To start using Fuse:${RESET}"
-    echo "Start the server:"
-    echo "   ${BLUE}fuse start${RESET}"
+    echo "${BOLD}Start Fuse:${RESET}"
+    echo "${BLUE}fuse start${RESET}"
     echo
-    echo "View status:"
-    echo "   ${BLUE}fuse status${RESET}"
+    echo "${BOLD}Check Fuse:${RESET}"
+    echo "${BLUE}fuse status${RESET}"
     echo
-    echo "${BOLD}Getting started:${RESET} https://declaredata.com/resources/playground"
+    echo "${BOLD}Use Fuse with your existing PySpark code:${RESET}"
+    echo "${BLUE}from fuse_python.session import session${RESET}"
+    echo "${BLUE}import fuse_python.functions as F${RESET}"
+    echo
+    echo "${BOLD}See also:${RESET} https://declaredata.com/resources/playground"
 }
 
 main "$@"
