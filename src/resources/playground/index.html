@@ -243,128 +243,101 @@
     </div>
 
     <main class="py-24 lg:py-32 bg-white">
-      <div class="container px-4 mx-auto max-w-3xl">
-        <div class="mb-24">
-          <h1 class="text-4xl lg:text-5xl font-normal mb-6">Get Started in &#8804;1 Minute</h1>
-          <p class="text-xl text-gray-600 leading-relaxed max-w-2xl">
-            Go from PySpark on Spark Clusters to DeclareData Fuse in minutes. Our mission is to
-            reduce unnecessary complexity and simplify your data processing workflows. We currently
-            support PySpark 3.5.0+ and Python 3.10+ with more support coming soon.
-          </p>
-          <nav class="mt-8">
-            <ul class="text-lg space-y-3 max-w-2xl">
-              <li>
-                <a
-                  href="#overview"
-                  class="text-purple-600 hover:text-purple-700 flex items-center gap-2"
-                >
-                  <span class="text-lg">•</span>
-                  <span class="hover:underline">Overview</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#examples"
-                  class="text-purple-600 hover:text-purple-700 flex items-center gap-2"
-                >
-                  <span class="text-lg">•</span>
-                  <span class="hover:underline">Examples</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#install"
-                  class="text-purple-600 hover:text-purple-700 flex items-center gap-2"
-                >
-                  <span class="text-lg">•</span>
-                  <span class="hover:underline">Install</span>
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#deploy"
-                  class="text-purple-600 hover:text-purple-700 flex items-center gap-2"
-                >
-                  <span class="text-lg">•</span>
-                  <span class="hover:underline">Deploy</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <!-- Overview Section -->
-        <div id="overview" class="mb-24 scroll-mt-24">
-          <h2 class="text-3xl font-normal mb-6">Overview</h2>
-          <div class="mb-10">
-            <p class="text-xl text-gray-700 leading-relaxed mb-8 max-w-2xl">
-              DeclareData Fuse is a drop-in alternative for PySpark code that runs without the need
-              for high overhead and expensive Spark clusters. The Fuse engine is designed to run on
-              your local machine as well as in production, providing the same APIs and functionality
-              as PySpark and is optimized for working with datasets less than 5TB.
+      <article>
+        <div class="container px-4 mx-auto max-w-3xl">
+          <div class="mb-24">
+            <h1 class="text-4xl lg:text-5xl font-normal mb-6">Get Started in &#8804;1 Minute</h1>
+            <p class="text-xl text-gray-600 leading-relaxed max-w-2xl">
+              From PySpark code running on costly Spark Clusters to DeclareData Fuse in minutes. Our
+              mission is to reduce unnecessary complexity and simplify your data processing
+              workflows.
             </p>
+            <nav class="mt-8">
+              <ul class="text-lg space-y-3 max-w-2xl">
+                <li>
+                  <a
+                    href="#overview"
+                    class="text-purple-600 hover:text-purple-700 flex items-center gap-2"
+                  >
+                    <span class="text-lg">•</span>
+                    <span class="hover:underline">Overview</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#examples"
+                    class="text-purple-600 hover:text-purple-700 flex items-center gap-2"
+                  >
+                    <span class="text-lg">•</span>
+                    <span class="hover:underline">Usage</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#more-examples"
+                    class="text-purple-600 hover:text-purple-700 flex items-center gap-2"
+                  >
+                    <span class="text-lg">•</span>
+                    <span class="hover:underline">More Examples</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#install"
+                    class="text-purple-600 hover:text-purple-700 flex items-center gap-2"
+                  >
+                    <span class="text-lg">•</span>
+                    <span class="hover:underline">Install</span>
+                  </a>
+                </li>
 
-            <!-- Feature Comparison Table with Vertical Highlight -->
-            <div class="overflow-x-auto rounded-lg border border-gray-300 shadow-md">
-              <table class="w-full border-collapse text-left">
-                <thead class="bg-gradient-to-r from-gray-100 to-gray-200">
-                  <tr>
-                    <th class="px-6 py-4 text-sm font-bold uppercase text-gray-700"></th>
-                    <th class="px-6 py-4 text-sm font-bold uppercase text-gray-700 bg-blue-100">
-                      DeclareData Fuse
-                    </th>
-                    <th class="px-6 py-4 text-sm font-bold uppercase text-gray-700">
-                      Spark Clusters
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-200 bg-white">
-                  <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 text-sm font-medium text-gray-900">Performance</td>
-                    <td class="px-6 py-4 text-sm text-gray-600 bg-blue-50">
-                      ⚡ Fast for ~5TB datasets
-                    </td>
-                    <td class="px-6 py-4 text-sm text-gray-600">
-                      🏔️ Optimized for largest datasets
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 text-sm font-medium text-gray-900">Cost</td>
-                    <td class="px-6 py-4 text-sm text-gray-600 bg-blue-50">💸 Low cost</td>
-                    <td class="px-6 py-4 text-sm text-gray-600">💰 High cost</td>
-                  </tr>
-                  <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 text-sm font-medium text-gray-900">Deployment</td>
-                    <td class="px-6 py-4 text-sm text-gray-600 bg-blue-50">🛠️ Easy</td>
-                    <td class="px-6 py-4 text-sm text-gray-600">🔧 Complex</td>
-                  </tr>
-                  <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 text-sm font-medium text-gray-900">Maintenance</td>
-                    <td class="px-6 py-4 text-sm text-gray-600 bg-blue-50">📉 Low</td>
-                    <td class="px-6 py-4 text-sm text-gray-600">📈 High</td>
-                  </tr>
-                </tbody>
-              </table>
+                <li>
+                  <a
+                    href="#deploy"
+                    class="text-purple-600 hover:text-purple-700 flex items-center gap-2"
+                  >
+                    <span class="text-lg">•</span>
+                    <span class="hover:underline">Deploy</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Overview Section -->
+          <div id="overview" class="mb-24 scroll-mt-24">
+            <h2 class="text-3xl font-normal mb-6">Overview</h2>
+            <div class="mb-10">
+              <p class="text-xl text-gray-700 leading-relaxed mb-8 max-w-2xl">
+                DeclareData Fuse is a drop-in alternative for PySpark code that runs without the
+                need for high overhead and expensive Spark clusters. The Fuse engine is designed to
+                run on your local machine as well as in production, providing the same APIs and
+                functionality as PySpark and is optimized for working with datasets less than 5TB.
+              </p>
+              <ul class="text-lg text-gray-700 space-y-2">
+                <li>🚀 Process terabyte-scale data faster in any environment</li>
+                <li>💰 Cut cloud costs by 50%+ without compromising speed</li>
+                <li>⚡️ Accelerate data engineering workflows, improve happiness</li>
+                <li>✨ Keep your existing PySpark codebase</li>
+              </ul>
             </div>
           </div>
-        </div>
 
-        <!-- Code Examples Section -->
-        <section id="examples" class="mb-24 scroll-mt-24">
-          <h2 class="text-3xl font-normal mb-6">Use Existing PySpark Code</h2>
-          <div class="mb-10">
-            <p class="text-xl text-gray-700 leading-relaxed mb-4 max-w-2xl">
-              Your PySpark code should work without modifications! No need to learn new APIs or
-              refactor your codebase.
-            </p>
-          </div>
+          <!-- Code Examples Section -->
+          <section id="examples" class="mb-24 scroll-mt-24">
+            <h2 class="text-3xl font-normal mb-6">Usage</h2>
+            <div class="mb-10">
+              <p class="text-xl text-gray-700 leading-relaxed mb-4 max-w-2xl">
+                Your PySpark code should work without modifications! No need to learn new APIs or
+                refactor your codebase.
+              </p>
+            </div>
 
-          <!-- Basic Example -->
-          <div class="mb-16 rounded-lg overflow-hidden border border-gray-200">
-            <pre
-              class="bg-gray-900 p-6 overflow-x-auto"
-            ><code class="text-white text-[15px] leading-relaxed">
+            <!-- Basic Example -->
+            <div class="mb-16 rounded-lg overflow-hidden border border-gray-200">
+              <pre
+                class="bg-gray-900 p-6 overflow-x-auto"
+              ><code class="text-white text-[15px] leading-relaxed">
 # Before: from pyspark.sql import SparkSession
 # Before: from pyspark.sql import functions as F
 # Before: from pyspark.sql.window import Window
@@ -398,24 +371,24 @@ result = df.withColumn("running_total", F.sum("incidents").over(window_spec)) \
 
 result.show()
                 </code></pre>
-            <div class="border-t border-gray-200 pl-6 pt-4">
-              <codapi-snippet sandbox="python" editor="basic"></codapi-snippet>
+              <div class="border-t border-gray-200 pl-6 pt-4">
+                <codapi-snippet sandbox="python" editor="basic"></codapi-snippet>
+              </div>
             </div>
-          </div>
 
-          <div class="mb-10">
-            <h2 class="text-3xl font-normal mb-6">More Examples</h2>
-            <p class="text-xl text-gray-700 leading-relaxed mb-4 max-w-2xl">
-              Complex operations like window functions work seamlessly. Here's an example
-              calculating running totals within categories:
-            </p>
-          </div>
+            <div class="mb-10" id="more-examples">
+              <h2 class="text-3xl font-normal mb-6">More Examples</h2>
+              <p class="text-xl text-gray-700 leading-relaxed mb-4 max-w-2xl">
+                Complex operations like window functions work seamlessly. Here's an example
+                calculating running totals within categories:
+              </p>
+            </div>
 
-          <!-- Advanced Example -->
-          <div class="mb-16 rounded-lg overflow-hidden border border-gray-200">
-            <pre
-              class="bg-gray-900 p-6 overflow-x-auto"
-            ><code class="text-white text-[15px] leading-relaxed">
+            <!-- Advanced Example -->
+            <div class="mb-16 rounded-lg overflow-hidden border border-gray-200">
+              <pre
+                class="bg-gray-900 p-6 overflow-x-auto"
+              ><code class="text-white text-[15px] leading-relaxed">
 from fuse_python.session import session
 import fuse_python.functions as F
 from fuse_python.window import Window
@@ -500,84 +473,85 @@ top_customers = analysis \
 print("\nTop Customers by Category:")
 top_customers.show()
                 </code></pre>
-            <div class="border-t border-gray-200 pl-6 pt-4">
-              <codapi-snippet sandbox="python" editor="basic"></codapi-snippet>
-            </div>
-          </div>
-        </section>
-
-        <!-- Installation Section -->
-        <section class="mb-24">
-          <h2 class="text-3xl font-normal mb-6" id="install">Install</h2>
-          <p class="text-xl text-gray-600 leading-relaxed mb-6 max-w-2xl">
-            Fuse is a standalone server binary and client library that you can install on your local
-            machine. It requires no additional dependencies and is designed to work with Python
-            3.10+.
-          </p>
-          <div class="mb-10">
-            <div
-              class="flex min-h-10 w-full max-w-xl flex-wrap items-center justify-center gap-6 transition-opacity duration-700"
-            >
-              <div class="flex flex-col w-full gap-2">
-                <div class="flex justify-center gap-4 text-sm">
-                  <button class="platform-btn selected" data-platform="unix">macOS/Linux</button>
-                  <button class="platform-btn" data-platform="windows">Windows</button>
-                </div>
-                <code
-                  class="copy-code-block text-xs md:text-sm inline-flex text-left items-center bg-gray-800 text-white rounded-lg p-4 pl-6 overflow-x-auto whitespace-nowrap relative w-full"
-                >
-                  <span class="flex gap-4 min-w-0 flex-1 pr-8 hover:font-semibold">
-                    <span class="shrink-0 text-gray-500 platform-prompt">$</span>
-                    <span class="flex-1 overflow-x-auto">
-                      <span
-                        class="command-text whitespace-nowrap"
-                        data-unix="curl -LsSf https://declaredata.com/fuse/install.sh | sh"
-                        data-windows="iwr https://declaredata.com/fuse/install.ps1 | iex"
-                        >curl -LsSf https://declaredata.com/fuse/install.sh | sh</span
-                      >
-                    </span>
-                  </span>
-                  <svg
-                    class="copy-icon shrink-0 h-5 w-5 transition text-gray-500 absolute right-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"></path>
-                    <path
-                      d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293-1.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L10.414 13H15v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM15 11h2a1 1 0 110 2h-2v-2z"
-                    ></path>
-                  </svg>
-                </code>
+              <div class="border-t border-gray-200 pl-6 pt-4">
+                <codapi-snippet sandbox="python" editor="basic"></codapi-snippet>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <!-- Deployment Section -->
-        <section class="mb-24">
-          <h2 class="text-3xl font-normal mb-6" id="deploy">Deploy</h2>
-          <div class="mb-10">
+          <!-- Installation Section -->
+          <section class="mb-24">
+            <h2 class="text-3xl font-normal mb-6" id="install">Install</h2>
             <p class="text-xl text-gray-600 leading-relaxed mb-6 max-w-2xl">
-              Deploying your code is as simple as running it locally. WIP.
+              Fuse is a standalone server binary and client library that you can install on your
+              local machine. It requires no additional dependencies and is designed to work with
+              Python 3.10+.
             </p>
-          </div>
+            <div class="mb-10">
+              <div
+                class="flex min-h-10 w-full max-w-xl flex-wrap items-center justify-center gap-6 transition-opacity duration-700"
+              >
+                <div class="flex flex-col w-full gap-2">
+                  <div class="flex justify-center gap-4 text-sm">
+                    <button class="platform-btn selected" data-platform="unix">macOS/Linux</button>
+                    <button class="platform-btn" data-platform="windows">Windows</button>
+                  </div>
+                  <code
+                    class="copy-code-block text-xs md:text-sm inline-flex text-left items-center bg-gray-800 text-white rounded-lg p-4 pl-6 overflow-x-auto whitespace-nowrap relative w-full"
+                  >
+                    <span class="flex gap-4 min-w-0 flex-1 pr-8 hover:font-semibold">
+                      <span class="shrink-0 text-gray-500 platform-prompt">$</span>
+                      <span class="flex-1 overflow-x-auto">
+                        <span
+                          class="command-text whitespace-nowrap"
+                          data-unix="curl -LsSf https://declaredata.com/fuse/install.sh | sh"
+                          data-windows="iwr https://declaredata.com/fuse/install.ps1 | iex"
+                          >curl -LsSf https://declaredata.com/fuse/install.sh | sh</span
+                        >
+                      </span>
+                    </span>
+                    <svg
+                      class="copy-icon shrink-0 h-5 w-5 transition text-gray-500 absolute right-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"></path>
+                      <path
+                        d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293-1.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L10.414 13H15v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM15 11h2a1 1 0 110 2h-2v-2z"
+                      ></path>
+                    </svg>
+                  </code>
+                </div>
+              </div>
+            </div>
+          </section>
 
-          <div class="rounded-lg overflow-hidden border border-gray-200">
-            <pre
-              class="bg-gray-900 p-6 overflow-x-auto"
-            ><code class="text-white text-[15px] leading-relaxed">
+          <!-- Deployment Section -->
+          <section class="mb-24">
+            <h2 class="text-3xl font-normal mb-6" id="deploy">Deploy</h2>
+            <div class="mb-10">
+              <p class="text-xl text-gray-600 leading-relaxed mb-6 max-w-2xl">
+                Deploying your code is as simple as running it locally. WIP.
+              </p>
+            </div>
+
+            <div class="rounded-lg overflow-hidden border border-gray-200">
+              <pre
+                class="bg-gray-900 p-6 overflow-x-auto"
+              ><code class="text-white text-[15px] leading-relaxed">
 from fuse_python.session import session
 import fuse_python.functions as F
 from contextlib import contextmanager
                 </code></pre>
-            <div class="border-t border-gray-200 pl-6 pt-4">
-              <codapi-snippet sandbox="python" editor="basic"></codapi-snippet>
+              <div class="border-t border-gray-200 pl-6 pt-4">
+                <codapi-snippet sandbox="python" editor="basic"></codapi-snippet>
+              </div>
             </div>
-          </div>
-        </section>
-      </div>
+          </section>
+        </div>
+      </article>
     </main>
 
     <script src="/dd.js"></script>
