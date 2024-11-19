@@ -31,106 +31,109 @@ debug()   { [ "${DEBUG:-0}" = "1" ] && echo "${YELLOW}DEBUG:${RESET} $1" >&2; }
 
 # spinner
 spin() {
-    msg=$1
-    pid=$2
-    spin='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
-    i=0
-    while kill -0 $pid 2>/dev/null; do
-        i=$(( (i+1) % 10 ))
-        printf "\r${BLUE}%s${RESET} %s" "${spin:$i:1}" "$msg"
-        sleep 0.1
+    _msg=$1
+    _pid=$2
+    _chars='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+    while kill -0 "$_pid" 2>/dev/null; do
+        _c=1
+        while [ "$_c" -le 10 ]; do
+            _ch=$(printf "%s" "$_chars" | cut -c "$_c")
+            printf "\r${BLUE}%s${RESET} %s" "$_ch" "$_msg"
+            sleep 0.1
+            _c=$(( _c + 1 ))
+        done
     done
-    wait $pid
+    wait "$_pid"
     if [ $? -eq 0 ]; then
-        printf "\r${GREEN}✓${RESET} %s\n" "$msg"
+        printf "\r${GREEN}✓${RESET} %s\n" "$_msg"
         return 0
     else
-        printf "\r${RED}✗${RESET} %s\n" "$msg"
+        printf "\r${RED}✗${RESET} %s\n" "$_msg"
         return 1
     fi
 }
 
 # port selection
 prompt_port() {
+    _port=""
     printf "Select Fuse Server Port ${BOLD}[%s]${RESET}: " "$DEFAULT_PORT" >/dev/tty
-    if port=$(head -n1 </dev/tty 2>/dev/null); then
-        if [ -z "$port" ]; then
-            port=$DEFAULT_PORT
+    if read _port </dev/tty 2>/dev/null; then
+        if [ -z "$_port" ]; then
+            _port=$DEFAULT_PORT
         else
-            case "$port" in
+            case "$_port" in
                 *[!0-9]*) 
-                    port=$DEFAULT_PORT
+                    _port=$DEFAULT_PORT
                     ;;
                 *)
-                    if [ "$port" -gt 0 ] && [ "$port" -lt 65536 ]; then
+                    if [ "$_port" -gt 0 ] && [ "$_port" -lt 65536 ]; then
                         : # Port is valid
                     else
-                        port=$DEFAULT_PORT
+                        _port=$DEFAULT_PORT
                     fi
                     ;;
             esac
         fi
     else
-        port=$DEFAULT_PORT
+        _port=$DEFAULT_PORT
     fi
     
-    if [ "$port" = "$DEFAULT_PORT" ]; then
-        success "Using default port: $port"
+    if [ "$_port" = "$DEFAULT_PORT" ]; then
+        success "Using default port: $_port"
     else
-        success "Using port: $port"
+        success "Using port: $_port"
     fi
     
-    echo "$port"
+    echo "$_port"
 }
 
 # platform detection
 get_platform() {
-    os=$(uname -s | tr '[:upper:]' '[:lower:]')
-    arch=$(uname -m)
+    _os=$(uname -s | tr '[:upper:]' '[:lower:]')
+    _arch=$(uname -m)
     
-    case "$arch" in
-        x86_64|amd64) arch="x86_64" ;;
-        aarch64|arm64) arch="arm64" ;;
-        *) error "Unsupported architecture: $arch" ;;
+    case "$_arch" in
+        x86_64|amd64) _arch="x86_64" ;;
+        aarch64|arm64) _arch="arm64" ;;
+        *) error "Unsupported architecture: $_arch" ;;
     esac
     
-    case "$os" in
+    case "$_os" in
         linux|darwin) ;;
-        *) error "Unsupported operating system: $os" ;;
+        *) error "Unsupported operating system: $_os" ;;
     esac
     
-    echo "${arch}-${os}"
+    echo "${_arch}-${_os}"
 }
 
 # install
 install_fuse() {
-    local platform=$1
-    local port=$2
-    local tmpdir
+    _platform=$1
+    _port=$2
     
-    tmpdir=$(mktemp -d)
-    if [ ! -d "$tmpdir" ]; then
+    _tmpdir=$(mktemp -d)
+    if [ ! -d "$_tmpdir" ]; then
         error "Failed to create temp directory"
     fi
     
-    export FUSE_TMPDIR="$tmpdir"
-    export FUSE_PORT="$port"
+    export FUSE_TMPDIR="$_tmpdir"
+    export FUSE_PORT="$_port"
     
     trap 'rm -rf "$FUSE_TMPDIR"' EXIT
     
     # download package
-    local archive="fuse-${platform}-latest.tar.gz"
-    local download_url="${DOWNLOAD_URL}/${archive}"
-    local archive_path="${FUSE_TMPDIR}/${archive}"
+    _archive="fuse-${_platform}-latest.tar.gz"
+    _download_url="${DOWNLOAD_URL}/${_archive}"
+    _archive_path="${FUSE_TMPDIR}/${_archive}"
     
     status "Downloading package..."
     (
         if command -v curl >/dev/null 2>&1; then
-            if ! curl -fsSL "$download_url" -o "$archive_path"; then
+            if ! curl -fsSL "$_download_url" -o "$_archive_path"; then
                 exit 1
             fi
         elif command -v wget >/dev/null 2>&1; then
-            if ! wget -q "$download_url" -O "$archive_path"; then
+            if ! wget -q "$_download_url" -O "$_archive_path"; then
                 exit 1
             fi
         else
@@ -141,7 +144,7 @@ install_fuse() {
     status "Installing..."
     (
         cd "$FUSE_TMPDIR" && \
-        if ! tar xzf "$archive"; then
+        if ! tar xzf "$_archive"; then
             exit 1
         fi && \
         
@@ -188,9 +191,9 @@ main() {
     echo
     
     # Check dependencies
-    for cmd in tar gzip; do
-        if ! command -v "$cmd" >/dev/null 2>&1; then
-            error "$cmd is required but not installed"
+    for _cmd in tar gzip; do
+        if ! command -v "$_cmd" >/dev/null 2>&1; then
+            error "$_cmd is required but not installed"
         fi
     done
     
@@ -200,10 +203,10 @@ main() {
     
     # identify platform
     status "Detecting platform..."
-    PLATFORM=$(get_platform)
-    ARCHIVE_URL="${DOWNLOAD_URL}/fuse-${PLATFORM}-latest.tar.gz"
-    success "Platform detected: $PLATFORM"
-    success "Package URL: $ARCHIVE_URL"
+    _platform=$(get_platform)
+    _archive_url="${DOWNLOAD_URL}/fuse-${_platform}-latest.tar.gz"
+    success "Platform detected: $_platform"
+    success "Package URL: $_archive_url"
     success "Install directory: $INSTALL_DIR"
     success "Config directory: $CONFIG_DIR"
     echo
@@ -219,7 +222,7 @@ main() {
     echo
     
     # install
-    install_fuse "$PLATFORM" "$PORT"
+    install_fuse "$_platform" "$PORT"
     
     # check PATH
     if ! echo "$PATH" | grep -q "$INSTALL_DIR"; then
