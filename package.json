@@ -17,7 +17,7 @@
     "*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint --fix",
-      "esbuild --bundle --minify"
+      "npx esbuild --minify --bundle"
     ],
     "*.css": [
       "prettier --write --parser css"
