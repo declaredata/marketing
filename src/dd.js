@@ -54,7 +54,7 @@ const addPlatformStyles = () => {
       left: 0;
       right: 0;
       height: 2px;
-      background-color: #B388FF;
+      background-color: #E0B0FF;
       border-radius: 1px;
     }
   `;
