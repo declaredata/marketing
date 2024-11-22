@@ -16,6 +16,7 @@
     <title>DeclareData | Fuse Playground</title>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/@antonz/codapi@0.19.7/dist/snippet.css" />
+    <script src="https://unpkg.com/@antonz/codapi@0.19.7/dist/settings.js"></script>
     <style>
       @keyframes logo-animation {
         0% {
@@ -442,9 +443,49 @@ result = df.withColumn("running_total", F.sum("incidents").over(window_spec)) \
           .orderBy("state", F.desc("incidents"))
 
 result.show()
-                </code></pre>
+</code></pre>
               <div class="border-t border-gray-200 pl-6 pt-4">
-                <codapi-snippet sandbox="python" editor="basic"></codapi-snippet>
+                <codapi-snippet sandbox="python" editor="basic">
+                  <codapi-settings
+                    url="http://playground.declaredata.com:1313/v1"
+                  ></codapi-settings>
+                </codapi-snippet>
+              </div>
+            </div>
+
+            <!-- connected to playground.declaredata.com:1313 -->
+            <div class="mb-16 rounded-lg overflow-hidden border border-gray-200">
+              <pre class="bg-gray-900 p-6 overflow-x-auto">
+<code class="text-white text-[15px] leading-relaxed">
+from fuse_python.dataframe import DataFrame
+import fuse_python.functions as F
+from fuse_python.column import Column, SortedColumn, SortDirection
+
+# Sample Data
+data = [
+    ("CA", "Los Angeles", 2023, 100),
+    ("CA", "San Francisco", 2023, 80),
+    ("NY", "New York City", 2023, 150),
+    ("NY", "Buffalo", 2023, 70),
+]
+
+# Create a DataFrame
+df = DataFrame(data, ["state", "city", "year", "incidents"])
+
+grouped_df = df.groupBy("state")
+
+year_col = Column(name="year")
+
+print(grouped_df)
+print(year_col)
+</code>
+</pre>
+              <div class="border-t border-gray-200 pl-6 pt-4">
+                <codapi-snippet sandbox="fuse" command="run" editor="basic">
+                  <codapi-settings
+                    url="http://playground.declaredata.com:1313/v1"
+                  ></codapi-settings>
+                </codapi-snippet>
               </div>
             </div>
 
