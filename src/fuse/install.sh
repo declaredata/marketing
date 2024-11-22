@@ -251,7 +251,7 @@ main() {
     echo
     echo "${BOLD}See also:${RESET} https://declaredata.com/resources/playground"
     echo
-    echo "${BOLD}NOTE: This installer is just a stubbed out scaffold at the moment and not fully-functional.${RESET}
+    echo "${BOLD}NOTE: This installer is just a stubbed out scaffold at the moment and not fully-functional.${RESET}"
 }
 
 main "$@"
